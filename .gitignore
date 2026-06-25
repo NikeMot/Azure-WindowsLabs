@@ -1,0 +1,74 @@
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*_secret*
+*secret*
+*password*
+*token*
+
+# Azure and cloud tooling
+.azure/
+*.publishsettings
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# PowerShell and scripts
+*.ps1xml.bak
+*.pssc
+*.psrc
+*.clixml
+transcript*.txt
+
+# Python / automation helper files
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and temporary output
+logs/
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+output/
+exports/
+reports/private/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sensitive screenshots or local evidence folders
+screenshots/private/
+evidence/private/
+
+# Books and copyrighted reference files
+*.pdf
+*.epub
+*.mobi
+*.azw3
