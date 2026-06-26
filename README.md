@@ -2,7 +2,7 @@
 
 ### Overview
 
-The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security and operational troubleshooting skills.
+The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security, AI-assisted administration and operational troubleshooting skills.
 
 This repository is designed to support my development toward Windows System Administrator, Azure Administrator, Cloud Support Engineer, Infrastructure Operations Engineer and Junior Platform/SRE-style roles.
 
@@ -18,6 +18,7 @@ Each lab should develop the ability to:
 * design a sensible technical approach
 * implement the solution safely
 * automate where appropriate
+* use AI critically where it improves investigation, scripting or documentation
 * verify the final state with evidence
 * troubleshoot realistic faults
 * document decisions and trade-offs
@@ -38,6 +39,7 @@ Each lab should develop the ability to:
 | Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc and Update Manager basics |
 | Monitoring, backup and security operations | Not started | Azure Monitor, Log Analytics, alerts, backup, restore, hardening, incident response, operational evidence |
 | Hybrid operations capstone | Not started | end-to-end Windows, identity, endpoint and Azure operations |
+| AI-assisted administration operations | Not started | Azure Copilot, Security Copilot, GitHub Copilot, KQL assistance, script review, incident summaries, responsible AI use |
 
 ### Repository Structure
 
@@ -53,6 +55,7 @@ Each lab should develop the ability to:
 | `07-azure-core-administration/` | Azure compute, storage, networking, RBAC, governance and cost-aware administration |
 | `08-monitoring-backup-security/` | Monitoring, logging, backup, restore, alerting, security hardening and incident response |
 | `09-hybrid-operations-capstone/` | Full hybrid Microsoft operations scenarios and final assessment labs |
+| `10-ai-assisted-admin-operations/` | Safe and practical use of AI for scripting, troubleshooting, KQL, documentation and operational analysis |
 
 ### How to Use This Repository
 
@@ -79,6 +82,8 @@ Each lab write-up should include:
 * completion checklist
 * reflection questions
 
+When AI is used in a lab, the lab must also record the tool used, the purpose, what was accepted, what was rejected and how the result was independently verified.
+
 ### Reference Stack
 
 The core reference stack for this repository is:
@@ -91,10 +96,16 @@ The core reference stack for this repository is:
 * Learning Microsoft Azure
 * Operating Systems references for theory and troubleshooting depth
 * Microsoft Learn and official Microsoft documentation for current implementation guidance
+* Microsoft Learn Azure Copilot, Security Copilot and Azure AI Foundry documentation
+* GitHub Copilot documentation
 
 ### Windows Technology Map
 
 The detailed Windows technology coverage is tracked in `docs/windows-technology-map.md`. That document explicitly includes Windows Autopilot, Windows Autopatch, Windows Update for Business, BitLocker, Windows LAPS, Windows Hello for Business, Endpoint Privilege Management, security baselines, Azure Arc and related endpoint administration technologies.
+
+### AI Usage Standard
+
+The safe use of AI across this repository is tracked in `docs/ai-usage-standard.md`. AI may assist troubleshooting, scripting, KQL, documentation and incident analysis, but it must not replace verification, official documentation or administrator accountability.
 
 ### Security and Privacy Notes
 
@@ -112,7 +123,8 @@ This repository must not contain:
 * screenshots containing sensitive user, tenant, subscription or account information
 * book PDFs or EPUBs
 * copyrighted material
+* unsanitised AI prompts or outputs containing sensitive information
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, PowerShell, Entra ID, Intune, Autopilot, modern Windows endpoint management and Azure.
+The final portfolio should show that I can build, support, troubleshoot and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, PowerShell, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure and safe AI-assisted administration.
