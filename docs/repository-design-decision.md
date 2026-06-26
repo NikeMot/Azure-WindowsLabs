@@ -4,7 +4,7 @@
 
 This document explains why the `Azure-WindowsLabs` repository is structured around administration topics rather than individual tools.
 
-The repository is intended to support a Windows and Azure System Administrator learning path. The structure should therefore reflect real operational responsibility areas: Windows Server, Active Directory, PowerShell, Entra ID, Intune, Azure, monitoring, backup, security and hybrid operations.
+The repository is intended to support a Windows and Azure System Administrator learning path. The structure should therefore reflect real operational responsibility areas: Windows Server, Active Directory, PowerShell, Entra ID, Intune, Azure, monitoring, backup, security, AI-assisted administration and hybrid operations.
 
 ### Decision
 
@@ -33,7 +33,7 @@ This convention keeps the repository:
 * suitable for portfolio review
 * consistent with the existing infrastructure lab repository naming style
 
-The folders are topics, not individual products or random labs. This helps show progression from foundational Windows administration to hybrid Microsoft cloud operations.
+The folders are topics, not individual products or random labs. This helps show progression from foundational Windows administration to hybrid Microsoft cloud operations and safe AI-assisted administration.
 
 ### Topic Order
 
@@ -48,6 +48,7 @@ The folders are topics, not individual products or random labs. This helps show 
 | `07-azure-core-administration` | Azure introduces cloud compute, storage, networking, RBAC and governance |
 | `08-monitoring-backup-security` | Operations work requires monitoring, backup, restore, alerting and security thinking |
 | `09-hybrid-operations-capstone` | Final labs should combine Windows, identity, endpoint and Azure operations |
+| `10-ai-assisted-admin-operations` | AI is a cross-cutting admin capability for scripting, troubleshooting, KQL, documentation, incident summaries and safe operational assistance |
 
 ### Folder Rules
 
@@ -59,7 +60,7 @@ Each topic folder should contain:
 * verification evidence notes where safe
 * links to supporting documentation where useful
 
-Do not store book files, credentials, private tenant data, company data or sensitive screenshots in the repository.
+Do not store book files, credentials, private tenant data, company data, sensitive screenshots or unsanitised AI prompts/outputs in the repository.
 
 ### Lab Naming Rule
 
@@ -78,3 +79,5 @@ Example:
 ### Production Relevance
 
 A real operations repository needs consistent structure because it becomes a source of evidence during troubleshooting, review, audit, onboarding and incident response. A predictable folder structure makes work easier to find and easier to maintain.
+
+AI-assisted administration also needs structure because prompts, generated scripts and AI-supported decisions can introduce security, privacy, correctness and accountability risks if they are not reviewed and documented.
