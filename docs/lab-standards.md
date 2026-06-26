@@ -15,6 +15,7 @@ Every lab must require the learner to:
 * research the reference material
 * make technical decisions
 * implement the solution
+* use AI critically where it is relevant and safe
 * verify the result with evidence
 * troubleshoot at least one realistic issue where appropriate
 * document production considerations
@@ -31,6 +32,14 @@ A weak lab says:
 A strong lab says:
 
 > HR provides starters, movers and leavers. Design the OU and group model, automate account changes, apply access control, verify login, intentionally break one user's access, diagnose the issue and document the operational improvement.
+
+A weak AI-assisted lab says:
+
+> Ask AI how to fix the error.
+
+A strong AI-assisted lab says:
+
+> Use AI to generate three troubleshooting hypotheses from sanitised symptoms, reject unsafe or unsupported suggestions, verify the remaining hypotheses with Event Viewer, PowerShell, Azure Monitor, Intune or Entra evidence, and document what the AI missed.
 
 ### Required Lab Sections
 
@@ -75,6 +84,19 @@ Each completed lab should include safe evidence such as:
 
 Do not include secrets, tenant identifiers, subscription IDs, private keys, tokens or company information.
 
+### AI Evidence Standard
+
+If AI is used in a lab, the lab should record:
+
+| Item | Description |
+| --- | --- |
+| AI tool used | The tool used, such as Azure Copilot, Security Copilot, GitHub Copilot, ChatGPT or Microsoft Copilot |
+| Purpose | What the tool was used for |
+| Prompt summary | A short sanitised summary of the prompt |
+| Output accepted | What was used from the AI response |
+| Output rejected | What was incorrect, unsafe, irrelevant or unsupported |
+| Human verification | How the result was verified without relying only on AI |
+
 ### Reference Standard
 
 Each lab should identify:
@@ -83,6 +105,7 @@ Each lab should identify:
 * supporting book sections
 * relevant Microsoft Learn documentation
 * any operating systems theory reference used
+* any AI documentation or AI tool guidance used
 * why the reference was relevant
 
 ### Production Standard
@@ -95,6 +118,7 @@ Every lab should answer:
 * What would need approval in production?
 * What evidence would be needed for audit or incident review?
 * What could fail and how would it be detected?
+* If AI was used, what data would be unsafe to expose and how would AI use be governed?
 
 ### Upload Rule
 
