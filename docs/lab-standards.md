@@ -15,6 +15,7 @@ Every lab must require the learner to:
 * work from one primary book source
 * complete Part A for new content
 * complete Part B for cumulative drilling of everything learned so far
+* perform a controlled break/fix exercise unless unsafe, destructive or irrelevant
 * research supporting reference material only where relevant
 * connect Windows behaviour to Modern Operating Systems theory where useful
 * map local Windows administration to Azure, Intune, Entra, Autopilot or hybrid cloud equivalents where relevant
@@ -47,18 +48,38 @@ Every core lab must use the two-part model from `docs/two-part-lab-model.md`.
 | Part | Name | Requirement |
 | --- | --- | --- |
 | Part A | New Content | Introduce and practise the new topic from the primary book section |
-| Part B | Cumulative Drill | Drill everything learned so far through a realistic production-style scenario |
+| Part B | Cumulative Drill | Drill everything learned so far through a realistic production-style break/fix scenario |
 
 Part B must become progressively harder as the series advances.
 
 | Lab range | Cumulative drill expectation |
 | --- | --- |
-| Labs 01-04 | Server inspection, evidence capture, services, updates, storage and networking basics |
-| Labs 05-08 | AD, DNS, GPO, users/groups, file services, IIS/FTP and access troubleshooting |
-| Labs 09-12 | Networking, firewall, VMware/SAN concepts, security, backup, recovery and incident thinking |
-| Labs 13-16 | Estate-scale PowerShell, automation, Azure/hybrid operations, monitoring, runbooks and stakeholder communications |
+| Labs 01-04 | Server inspection, evidence capture, services, updates, storage, networking basics and simple controlled faults |
+| Labs 05-08 | AD, DNS, GPO, users/groups, file services, IIS/FTP and access troubleshooting faults |
+| Labs 09-12 | Networking, firewall, VMware/SAN concepts, security, backup, recovery and incident faults |
+| Labs 13-16 | Estate-scale PowerShell, automation, Azure/hybrid operations, monitoring, runbooks, stakeholder communications and SRE-style break/fix incidents |
 
 The seven reflection questions remain fixed. Do not add more reflection questions because a lab has two parts.
+
+### Break/Fix Standard
+
+Break/fix is mandatory because production infrastructure work is mostly diagnosis, recovery and prevention.
+
+Every core lab should include a controlled fault, mainly in Part B, unless the fault would be unsafe, destructive or irrelevant.
+
+Use `docs/break-fix-standard.md` as the detailed rule.
+
+Every break/fix exercise should include:
+
+1. proof the system worked before the fault
+2. the controlled fault introduced
+3. the user or service symptom
+4. diagnostic evidence
+5. root cause
+6. fix or rollback
+7. recovery verification
+8. prevention or monitoring improvement
+9. production risk note
 
 ### Source-Led Rule
 
@@ -174,7 +195,7 @@ A weak lab says:
 
 A strong source-led lab says:
 
-> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then drill the earlier skills under a cumulative production scenario.
+> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then deliberately break one controlled element and recover it using evidence.
 
 A weak AI-assisted lab says:
 
@@ -204,20 +225,21 @@ Each completed lab document should follow `docs/lab-output-template.md` and incl
 7. Expected Environment or Target State
 8. Deliverables
 9. Implementation Tasks: Part A and Part B
-10. Key Commands Used
-11. Files, Resources or Objects Created or Changed
-12. Verification Evidence
-13. AI Assistance Used, if relevant
-14. Diagram, if useful
-15. Issues Encountered
-16. Decisions Made
-17. Security and Production Considerations
-18. Final Outcome
-19. What I Learned
-20. What I Would Improve in Production
-21. References Used
-22. Completion Checklist
-23. Seven Reflection Questions
+10. Break/Fix Exercise
+11. Key Commands Used
+12. Files, Resources or Objects Created or Changed
+13. Verification Evidence
+14. AI Assistance Used, if relevant
+15. Diagram, if useful
+16. Issues Encountered
+17. Decisions Made
+18. Security and Production Considerations
+19. Final Outcome
+20. What I Learned
+21. What I Would Improve in Production
+22. References Used
+23. Completion Checklist
+24. Seven Reflection Questions
 
 ### Evidence Standard
 
@@ -233,6 +255,7 @@ Each completed lab should include safe evidence such as:
 * IIS logs where relevant
 * DNS or network test output where relevant
 * backup or restore verification
+* break/fix baseline, fault, symptom, diagnosis, fix and recovery verification
 * incident communication outputs where relevant
 * screenshots only when they do not expose sensitive data
 
@@ -290,6 +313,7 @@ Every final lab document should answer:
 * What OS concept explains the behaviour or failure mode?
 * What is the Azure, Intune, Entra or hybrid equivalent of this local capability?
 * What earlier skills were drilled again in Part B?
+* What broke, how was it diagnosed, how was it fixed, and how would recurrence be prevented?
 * If AI was used, what data would be unsafe to expose and how would AI use be governed?
 
 ### Upload Rule
