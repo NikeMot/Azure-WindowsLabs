@@ -2,6 +2,8 @@
 
 Use this template for every Windows and Azure system administration lab. Keep it evidence-based, production-focused and clear enough for later portfolio review.
 
+The learner's primary responsibility is to solve the lab and provide safe evidence. The final documentation can be completed from the learner's evidence and answers to the seven reflection questions.
+
 ---
 
 # Lab Title
@@ -22,7 +24,7 @@ Use this template for every Windows and Azure system administration lab. Keep it
 
 State the purpose of the lab in 2–4 lines.
 
-This lab is not a copy-paste tutorial. You are expected to understand the requirements, check the reference material, make decisions and prove the final setup works.
+This lab is not a copy-paste tutorial. The learner is expected to understand the requirements, check the reference material, make decisions and prove the final setup works.
 
 ---
 
@@ -49,6 +51,7 @@ Use the reference material to work out the correct steps.
 | Azure | Learning Microsoft Azure / Microsoft Learn |  |
 | Intune | Microsoft Intune Cookbook / Microsoft Learn |  |
 | Operating systems theory | Modern Operating Systems / Operating System Concepts |  |
+| AI-assisted administration | AI Usage Standard / Microsoft Learn / Copilot documentation |  |
 
 ---
 
@@ -73,6 +76,7 @@ You must not:
 * use company/private data
 * upload screenshots containing sensitive information
 * commit book PDFs or EPUBs
+* paste unsanitised AI prompts or outputs containing sensitive information
 * rely only on the GUI when PowerShell, Azure CLI or logs would provide better evidence
 * mark the lab complete without verification evidence
 
@@ -80,7 +84,7 @@ You must not:
 
 ## 6. Assumptions
 
-Record your assumptions here.
+Record assumptions here.
 
 Examples:
 
@@ -94,7 +98,7 @@ Examples:
 
 ## 7. Expected Environment or Target State
 
-Describe the final state you are trying to create.
+Describe the final state created by the lab.
 
 Include relevant items such as:
 
@@ -108,6 +112,7 @@ Include relevant items such as:
 * Azure resource groups
 * Azure VNets, VMs, NSGs or storage accounts
 * monitoring, backup or alerting configuration
+* AI-assisted artefacts, if relevant
 
 ---
 
@@ -169,7 +174,7 @@ You need to prove:
 
 ## 10. Key Commands Used
 
-Record the important commands you used.
+Record the important commands used.
 
 | Command | Purpose |
 | --- | --- |
@@ -201,7 +206,26 @@ This section proves that the lab worked.
 
 ---
 
-## 13. Diagram
+## 13. AI Assistance Used
+
+Complete this section only if AI was used during the lab.
+
+| Item | Notes |
+| --- | --- |
+| AI tool used |  |
+| Purpose |  |
+| Prompt summary |  |
+| Output accepted |  |
+| Output rejected |  |
+| Human verification |  |
+
+If AI was not used, write:
+
+> AI was not used for this lab.
+
+---
+
+## 14. Diagram
 
 Use a diagram if it improves understanding.
 
@@ -219,7 +243,7 @@ If no diagram is needed, write:
 
 ---
 
-## 14. Issues Encountered
+## 15. Issues Encountered
 
 | Issue | Cause | Fix |
 | --- | --- | --- |
@@ -231,7 +255,7 @@ If there were no issues, write:
 
 ---
 
-## 15. Decisions Made
+## 16. Decisions Made
 
 | Decision | Reason |
 | --- | --- |
@@ -240,7 +264,7 @@ If there were no issues, write:
 
 ---
 
-## 16. Security and Production Considerations
+## 17. Security and Production Considerations
 
 Explain the production relevance of this lab.
 
@@ -258,16 +282,11 @@ Cover where relevant:
 * operational risk
 * reliability
 * documentation
-
-Write your notes here:
-
-```text
-Add production relevance notes here.
-```
+* AI governance, if AI was used
 
 ---
 
-## 17. Final Outcome
+## 18. Final Outcome
 
 State clearly whether the lab was completed.
 
@@ -277,19 +296,9 @@ Example:
 
 ---
 
-## 18. What I Learned
+## 19. What I Learned
 
-Write 3–6 bullet points.
-
-* 
-* 
-* 
-
----
-
-## 19. What I Would Improve in Production
-
-Write 2–5 bullet points.
+Summarise the learner's main learning points from the evidence and reflection answers.
 
 * 
 * 
@@ -297,9 +306,19 @@ Write 2–5 bullet points.
 
 ---
 
-## 20. References Used
+## 20. What I Would Improve in Production
 
-List the references you actually used.
+Summarise practical production improvements.
+
+* 
+* 
+* 
+
+---
+
+## 21. References Used
+
+List the references actually used.
 
 | Reference | Used for |
 | --- | --- |
@@ -308,7 +327,7 @@ List the references you actually used.
 
 ---
 
-## 21. Completion Checklist
+## 22. Completion Checklist
 
 * [ ] Requirements understood
 * [ ] Reference material checked
@@ -319,25 +338,21 @@ List the references you actually used.
 * [ ] Security and production considerations documented
 * [ ] Diagram added if useful
 * [ ] Files or resources documented
+* [ ] AI use documented if relevant
 * [ ] Work uploaded to the correct repository folder
 * [ ] No secrets or private data committed
-* [ ] Reflection completed
+* [ ] Seven reflection questions answered
 
 ---
 
-## 22. Reflection Questions
+## 23. Seven Reflection Questions
 
-Answer these after completing the lab.
+Ask only these seven questions after the learner has solved the lab:
 
 1. What problem did this lab solve?
-2. What was the most important design decision?
-3. What evidence proves the configuration worked?
-4. What could fail in production?
-5. How would you monitor this in production?
-6. How would you recover from failure?
-7. What would require change approval?
-8. What would be risky to automate?
-9. What would make this implementation more secure?
-10. What would make this implementation more reliable?
-11. What would a senior sysadmin expect to see in your documentation?
-12. What would make this lab look careless to a hiring manager?
+2. What was the most important thing you configured, changed or proved?
+3. What evidence proves the lab worked?
+4. What issue or mistake did you encounter, and how did you fix or investigate it?
+5. What would be risky about doing this in production?
+6. What would you monitor, back up or document in a real environment?
+7. What did you learn that you could explain in an interview?
