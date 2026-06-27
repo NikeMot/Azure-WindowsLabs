@@ -2,7 +2,7 @@
 
 ### Overview
 
-The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security, AI-assisted administration and operational troubleshooting skills.
+The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security, SRE-style reliability, AI-assisted administration and operational troubleshooting skills.
 
 This repository is designed to support my development toward Windows System Administrator, Azure Administrator, Cloud Support Engineer, Infrastructure Operations Engineer and Junior Platform/SRE-style roles.
 
@@ -15,6 +15,14 @@ The lab programme is aligned to a Windows-heavy production infrastructure role i
 AWS EC2 is intentionally ignored for this programme. Azure VM and hybrid Microsoft infrastructure are used instead.
 
 Detailed job alignment is tracked in `docs/target-job-alignment.md`.
+
+### SRE Capstone Direction
+
+The capstone is SRE-related.
+
+The final core lab and final drill should simulate operating a production Windows/IIS service, not merely configuring infrastructure. The capstone should include service ownership, dependency mapping, SLI/SLO thinking, monitoring, alerting, incident triage, stakeholder communication, rollback/recovery, post-incident review, reliability improvements and PowerShell automation.
+
+Detailed SRE capstone rules are tracked in `docs/sre-capstone-standard.md`.
 
 ### Lab Design Philosophy
 
@@ -29,7 +37,7 @@ Every core lab has two parts:
 | Part A — New Content | Learn and apply the new topic from the primary source section |
 | Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style scenario |
 
-After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce and pressure-test the full skillset.
+After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce and pressure-test the full skillset. Drill D08 is the final SRE production incident capstone.
 
 Each lab should develop the ability to:
 
@@ -47,7 +55,7 @@ Each lab should develop the ability to:
 
 ### Mandatory Production Anchors
 
-The programme must include four hard production anchors:
+The programme must include five hard production anchors:
 
 | Anchor | Purpose |
 | --- | --- |
@@ -55,6 +63,7 @@ The programme must include four hard production anchors:
 | 100-server estate simulation with PowerShell reporting | Prepare for 90/100+ Windows Server estate thinking |
 | VMware/SAN/storage incident simulation | Prepare for VMware, datastore, LUN, snapshot, backup and capacity-risk discussions |
 | On-call incident communication pack | Prepare for severity, stakeholder update, escalation, rollback and PIR communication |
+| SRE-style reliability capstone | Prepare for service ownership, SLI/SLO thinking, reliability improvement and toil reduction |
 
 ### Skills Covered
 
@@ -74,7 +83,7 @@ The programme must include four hard production anchors:
 | Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc and Update Manager basics |
 | Production operations | Not started | on-call, incident triage, severity, escalation, change control, stakeholder updates and post-incident notes |
 | Monitoring, backup and security operations | Not started | Azure Monitor, Log Analytics, alerts, backup, restore, hardening, incident response, operational evidence |
-| Hybrid operations capstone | Not started | end-to-end Windows, identity, endpoint, Azure and production operations |
+| SRE-style capstone | Not started | service ownership, dependency mapping, SLIs/SLOs, alerting, incident response, PIR, toil reduction and reliability backlog |
 | AI-assisted administration operations | Not started | Azure Copilot, Security Copilot, GitHub Copilot, KQL assistance, script review, incident summaries, responsible AI use |
 
 ### Repository Structure
@@ -90,7 +99,7 @@ The programme must include four hard production anchors:
 | `06-intune-endpoint-management/` | Intune, Autopilot, compliance, configuration, application deployment, Windows update management and endpoint support |
 | `07-azure-core-administration/` | Azure compute, storage, networking, RBAC, governance and cost-aware administration |
 | `08-monitoring-backup-security/` | Monitoring, logging, backup, restore, alerting, security hardening and incident response |
-| `09-hybrid-operations-capstone/` | Full hybrid Microsoft operations scenarios and final assessment labs |
+| `09-hybrid-operations-capstone/` | SRE-style Windows/Azure service reliability capstone and final assessment labs |
 | `10-ai-assisted-admin-operations/` | Safe and practical use of AI for scripting, troubleshooting, KQL, documentation and operational analysis |
 
 ### Lab Roadmap
@@ -146,6 +155,7 @@ The core reference stack for this repository is:
 * The Practice of System and Network Administration
 * The Practice of Cloud System Administration
 * Microsoft Learn and official Microsoft documentation for current implementation guidance
+* SRE capstone standard
 * Microsoft Learn Azure Copilot, Security Copilot and Azure AI Foundry documentation
 * GitHub Copilot documentation
 
@@ -177,4 +187,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, operating systems fundamentals and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, SRE-style reliability practices, operating systems fundamentals and safe AI-assisted administration.
