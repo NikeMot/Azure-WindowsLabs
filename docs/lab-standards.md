@@ -15,6 +15,7 @@ Every lab must require the learner to:
 * work from one primary book source
 * research supporting reference material only where relevant
 * connect Windows behaviour to Modern Operating Systems theory where useful
+* map local Windows administration to Azure, Intune, Entra, Autopilot or hybrid cloud equivalents where relevant
 * make technical decisions
 * implement the solution
 * use PowerShell as a serious administration and automation tool
@@ -53,6 +54,7 @@ Supporting references may be used to deepen the lab:
 
 * Learn PowerShell in a Month of Lunches for PowerShell technique
 * Learning Microsoft Azure for Azure or hybrid relevance
+* Azure Cookbook for practical Azure implementation patterns
 * Microsoft Intune Cookbook for endpoint-management relevance
 * Active Directory Administration Cookbook for AD-specific implementation
 * Microsoft Learn for current procedures and supported syntax
@@ -62,6 +64,35 @@ Operating principles should come from:
 
 * The Practice of System and Network Administration
 * The Practice of Cloud System Administration
+
+### Azure Cloud Parity Standard
+
+Azure is a first-class part of the programme.
+
+The learner has already passed AZ-104, so labs should not waste time on basic Azure definitions unless needed for recall. Labs should require cloud comparison, design judgement, implementation evidence or troubleshooting.
+
+For each relevant local Windows task, the lab should ask:
+
+```text
+What is the Azure, Intune, Entra, Autopilot, Arc, Monitor, Backup, Update Manager, PowerShell or CLI equivalent?
+```
+
+Use `docs/azure-cloud-parity-standard.md` as the detailed mapping.
+
+Every local Windows capability should be connected where relevant to:
+
+* Azure VMs
+* Azure managed disks
+* Azure VNets, subnets, NICs, private IPs, public IPs and NSGs
+* Azure RBAC and Entra ID
+* Azure Monitor, Log Analytics, KQL and alerts
+* Azure Update Manager
+* Azure Backup and Recovery Services vaults
+* Azure Arc-enabled servers
+* Intune configuration profiles, compliance policies and security baselines
+* Windows Autopilot and Autopilot device preparation
+* Windows Update for Business and Windows Autopatch
+* Azure CLI, Az PowerShell and automation patterns
 
 ### PowerShell Standard
 
@@ -78,6 +109,7 @@ Every core lab should include at least one meaningful PowerShell element:
 * automation task
 * error handling pattern
 * transcript or logging practice
+* Azure CLI or Az PowerShell comparison where cloud parity applies
 
 Labs 13 to 16 should be heavily PowerShell-focused and should include scripting, automation, remoting, functions, parameters, logging, errors, idempotence and operational safety.
 
@@ -107,7 +139,7 @@ A weak lab says:
 
 A strong source-led lab says:
 
-> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, then decide whether the server is ready for the next infrastructure role.
+> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then decide whether the server is ready for the next infrastructure role.
 
 A weak AI-assisted lab says:
 
@@ -202,6 +234,7 @@ Each lab should identify:
 * the primary book section used
 * supporting book sections, if used
 * relevant Microsoft Learn documentation, if used
+* Azure, Intune, Autopilot or Entra documentation used, if relevant
 * Modern Operating Systems theory used, if relevant
 * any AI documentation or AI tool guidance used
 * why each reference was relevant
@@ -217,6 +250,7 @@ Every final lab document should answer:
 * What evidence would be needed for audit or incident review?
 * What could fail and how would it be detected?
 * What OS concept explains the behaviour or failure mode?
+* What is the Azure, Intune, Entra or hybrid equivalent of this local capability?
 * If AI was used, what data would be unsafe to expose and how would AI use be governed?
 
 ### Upload Rule
