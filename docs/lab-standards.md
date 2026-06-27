@@ -18,8 +18,9 @@ Every lab must require the learner to:
 * use AI critically where it is relevant and safe
 * verify the result with evidence
 * troubleshoot at least one realistic issue where appropriate
-* document production considerations
-* reflect on what would change in a real organisation
+* answer exactly seven reflection questions after solving the lab
+
+The learner should focus on solving the lab. The final documentation should be produced from the learner's evidence and answers.
 
 ### Lab Difficulty Standard
 
@@ -41,9 +42,16 @@ A strong AI-assisted lab says:
 
 > Use AI to generate three troubleshooting hypotheses from sanitised symptoms, reject unsafe or unsupported suggestions, verify the remaining hypotheses with Event Viewer, PowerShell, Azure Monitor, Intune or Entra evidence, and document what the AI missed.
 
+### Role Split
+
+| Role | Responsibility |
+| --- | --- |
+| Learner | Solve the technical lab, collect safe evidence, report issues encountered and answer seven reflection questions |
+| Assistant | Write the final documentation, apply the lab template, format evidence, add production considerations and upload the completed lab to the correct folder |
+
 ### Required Lab Sections
 
-Each lab should follow `docs/lab-output-template.md` and include:
+Each completed lab document should follow `docs/lab-output-template.md` and include:
 
 1. Lab Summary
 2. Scenario
@@ -66,7 +74,7 @@ Each lab should follow `docs/lab-output-template.md` and include:
 19. What I Would Improve in Production
 20. References Used
 21. Completion Checklist
-22. Reflection Questions
+22. Seven Reflection Questions
 
 ### Evidence Standard
 
@@ -86,7 +94,7 @@ Do not include secrets, tenant identifiers, subscription IDs, private keys, toke
 
 ### AI Evidence Standard
 
-If AI is used in a lab, the lab should record:
+If AI is used in a lab, the final document should record:
 
 | Item | Description |
 | --- | --- |
@@ -96,6 +104,20 @@ If AI is used in a lab, the lab should record:
 | Output accepted | What was used from the AI response |
 | Output rejected | What was incorrect, unsafe, irrelevant or unsupported |
 | Human verification | How the result was verified without relying only on AI |
+
+This should be captured without increasing the reflection question count beyond seven.
+
+### Seven Reflection Questions
+
+At the end of each lab, ask only these seven questions:
+
+1. What problem did this lab solve?
+2. What was the most important thing you configured, changed or proved?
+3. What evidence proves the lab worked?
+4. What issue or mistake did you encounter, and how did you fix or investigate it?
+5. What would be risky about doing this in production?
+6. What would you monitor, back up or document in a real environment?
+7. What did you learn that you could explain in an interview?
 
 ### Reference Standard
 
@@ -110,7 +132,7 @@ Each lab should identify:
 
 ### Production Standard
 
-Every lab should answer:
+Every final lab document should answer:
 
 * What risk does this configuration introduce or reduce?
 * How would this be monitored?
