@@ -4,27 +4,32 @@ Use this template for every Windows and Azure system administration lab. Keep it
 
 The learner's primary responsibility is to solve the lab and provide safe evidence. The final documentation can be completed from the learner's evidence and answers to the seven reflection questions.
 
+Every core lab has two parts:
+
+| Part | Purpose |
+| --- | --- |
+| Part A — New Content | Learn and apply the new topic from the primary source section |
+| Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style scenario |
+
 ---
 
 # Lab Title
 
 ## 1. Lab Summary
 
-**Lab:**
-
-**Date completed:**
-
-**Topic area:**
-
-**Difficulty:**
-
+**Lab:**  
+**Date completed:**  
+**Topic area:**  
+**Primary source:**  
+**Supporting sources:**  
+**Difficulty:**  
 **Status:** Not started / In progress / Completed / Blocked
 
 ### Objective
 
 State the purpose of the lab in 2–4 lines.
 
-This lab is not a copy-paste tutorial. The learner is expected to understand the requirements, check the reference material, make decisions and prove the final setup works.
+This lab is not a copy-paste tutorial. The learner is expected to understand the requirements, check the reference material, make decisions, complete both parts and prove the final setup works.
 
 ---
 
@@ -32,36 +37,38 @@ This lab is not a copy-paste tutorial. The learner is expected to understand the
 
 Describe the real-world situation this lab simulates.
 
-Example:
+Include:
 
-> You have joined an infrastructure operations team responsible for a small Microsoft environment. Your manager asks you to configure a secure Windows Server baseline, document the decisions, verify the configuration and explain how it would be operated in production.
+* the business or operational problem
+* the Windows Server / Azure / production context
+* why the work matters
+* what would happen if this was done badly
 
 ---
 
-## 3. Reference Material
+## 3. Source Mapping
 
-Use the reference material to work out the correct steps.
-
-| Area | Suggested reference | Used? |
+| Source role | Source | How it is used |
 | --- | --- | --- |
-| Cloud operations design | The Practice of Cloud System Administration |  |
-| Windows Server | Windows Server 2022 and PowerShell |  |
-| Active Directory | Active Directory Administration Cookbook |  |
-| PowerShell | Learn PowerShell in a Month of Lunches |  |
-| Azure | Learning Microsoft Azure / Microsoft Learn |  |
-| Intune | Microsoft Intune Cookbook / Microsoft Learn |  |
-| Operating systems theory | Modern Operating Systems / Operating System Concepts |  |
-| AI-assisted administration | AI Usage Standard / Microsoft Learn / Copilot documentation |  |
+| Primary guide | Windows Server 2022 and PowerShell |  |
+| PowerShell support | Learn PowerShell in a Month of Lunches |  |
+| Azure support | Learning Microsoft Azure / Azure Cookbook |  |
+| Endpoint support | Microsoft Intune Cookbook / Microsoft Learn |  |
+| OS theory | Modern Operating Systems, 5e |  |
+| Operational principle | The Practice of System and Network Administration |  |
+| Cloud operations principle | The Practice of Cloud System Administration |  |
+| Current procedure | Microsoft Learn |  |
+| AI standard | AI Usage Standard, if AI was used |  |
 
 ---
 
 ## 4. Requirements
 
-| ID | Requirement | Status |
-| --- | --- | --- |
-| R1 |  | Not started |
-| R2 |  | Not started |
-| R3 |  | Not started |
+| ID | Requirement | Part | Status |
+| --- | --- | --- | --- |
+| R1 |  | Part A | Not started |
+| R2 |  | Part A | Not started |
+| R3 |  | Part B | Not started |
 
 ---
 
@@ -77,8 +84,8 @@ You must not:
 * upload screenshots containing sensitive information
 * commit book PDFs or EPUBs
 * paste unsanitised AI prompts or outputs containing sensitive information
-* rely only on the GUI when PowerShell, Azure CLI or logs would provide better evidence
-* mark the lab complete without verification evidence
+* rely only on the GUI when PowerShell, Azure CLI, logs or policy evidence would provide better proof
+* mark the lab complete without verification evidence for both Part A and Part B
 
 ---
 
@@ -93,6 +100,7 @@ Examples:
 * Screenshots and command outputs will be sanitised.
 * The lab may use local virtual machines and/or Azure resources.
 * Cost controls and cleanup are required for cloud resources.
+* Physical data-centre tasks may be simulated through diagrams, checklists or remote-hands instructions.
 
 ---
 
@@ -106,31 +114,42 @@ Include relevant items such as:
 * AD DS objects
 * DNS zones or records
 * GPOs
+* IIS sites, bindings or app pools
+* FTP concepts or service checks
+* mail/DNS records or mail-flow notes
 * PowerShell scripts
 * Entra users, groups or roles
 * Intune policies
-* Azure resource groups
-* Azure VNets, VMs, NSGs or storage accounts
+* Azure resource groups, VNets, VMs, NSGs or storage accounts
 * monitoring, backup or alerting configuration
+* VMware/SAN/storage concepts, if relevant
+* Linux checks, if relevant
+* incident or stakeholder communication artefacts, if relevant
 * AI-assisted artefacts, if relevant
 
 ---
 
 ## 8. Deliverables
 
-| Deliverable | Purpose |
-| --- | --- |
-|  |  |
-|  |  |
-|  |  |
+You do not need to manually write the final lab report. After solving the lab, send the evidence to the assistant.
+
+| Deliverable | Part | Purpose |
+| --- | --- | --- |
+| Command output evidence | Part A / Part B | Proves configuration and troubleshooting work |
+| Notes on changes made | Part A / Part B | Allows implementation to be documented clearly |
+| Issues/errors encountered | Part A / Part B | Allows troubleshooting evidence to be documented |
+| Scripts or generated reports | Part A / Part B | Proves automation and repeatability |
+| Seven reflection answers | Final | Allows the final lab report to be completed |
 
 ---
 
 ## 9. Implementation Tasks
 
-Use these tasks as a guide, not as a full walkthrough.
+## Part A — New Content
 
-### Task 1 —
+Use this section to introduce and practise the new topic from the primary source.
+
+### Task A1 —
 
 Describe the task.
 
@@ -146,9 +165,7 @@ Useful commands may include:
 # Add useful commands here
 ```
 
----
-
-### Task 2 —
+### Task A2 —
 
 Describe the task.
 
@@ -160,9 +177,36 @@ You need to prove:
 
 ---
 
-### Task 3 —
+## Part B — Cumulative Drill
 
-Describe the task.
+Use this section to drill everything learned so far.
+
+The cumulative drill should reuse earlier skills such as:
+
+* server inspection
+* PowerShell evidence collection
+* service checks
+* Event Viewer or logs
+* DNS/network checks
+* AD or access checks, where relevant
+* IIS/application checks, where relevant
+* Azure/cloud parity reasoning
+* monitoring, backup or incident thinking
+* stakeholder communication, where relevant
+
+### Task B1 —
+
+Describe the cumulative scenario.
+
+You need to prove:
+
+* 
+* 
+* 
+
+### Task B2 —
+
+Describe the verification or troubleshooting task.
 
 You need to prove:
 
@@ -176,33 +220,33 @@ You need to prove:
 
 Record the important commands used.
 
-| Command | Purpose |
-| --- | --- |
-|  |  |
-|  |  |
-|  |  |
+| Command | Part | Purpose |
+| --- | --- | --- |
+|  | Part A / Part B |  |
+|  | Part A / Part B |  |
+|  | Part A / Part B |  |
 
 ---
 
 ## 11. Files, Resources or Objects Created or Changed
 
-| Path / Object / Resource | Purpose |
-| --- | --- |
-|  |  |
-|  |  |
-|  |  |
+| Path / Object / Resource | Part | Purpose |
+| --- | --- | --- |
+|  | Part A / Part B |  |
+|  | Part A / Part B |  |
+|  | Part A / Part B |  |
 
 ---
 
 ## 12. Verification Evidence
 
-This section proves that the lab worked.
+This section proves that both parts worked.
 
-| Check | Evidence | Result |
-| --- | --- | --- |
-|  |  | Passed / Failed |
-|  |  | Passed / Failed |
-|  |  | Passed / Failed |
+| Check | Part | Evidence | Result |
+| --- | --- | --- | --- |
+|  | Part A |  | Passed / Failed |
+|  | Part B |  | Passed / Failed |
+|  | Part B |  | Passed / Failed |
 
 ---
 
@@ -231,10 +275,10 @@ Use a diagram if it improves understanding.
 
 ```mermaid
 flowchart LR
-    A[Requirement] --> B[Implementation]
-    B --> C[Verification]
-    C --> D[Documentation]
-    D --> E[Portfolio Evidence]
+    A[Part A: New Content] --> B[Implementation Evidence]
+    B --> C[Part B: Cumulative Drill]
+    C --> D[Verification Evidence]
+    D --> E[Final Documentation]
 ```
 
 If no diagram is needed, write:
@@ -245,9 +289,9 @@ If no diagram is needed, write:
 
 ## 15. Issues Encountered
 
-| Issue | Cause | Fix |
-| --- | --- | --- |
-|  |  |  |
+| Issue | Part | Cause | Fix / Investigation |
+| --- | --- | --- | --- |
+|  | Part A / Part B |  |  |
 
 If there were no issues, write:
 
@@ -257,10 +301,10 @@ If there were no issues, write:
 
 ## 16. Decisions Made
 
-| Decision | Reason |
-| --- | --- |
-|  |  |
-|  |  |
+| Decision | Part | Reason |
+| --- | --- | --- |
+|  | Part A / Part B |  |
+|  | Part A / Part B |  |
 
 ---
 
@@ -282,6 +326,9 @@ Cover where relevant:
 * operational risk
 * reliability
 * documentation
+* Azure/cloud parity
+* VMware/SAN or physical data-centre limitations
+* stakeholder communication
 * AI governance, if AI was used
 
 ---
@@ -292,7 +339,7 @@ State clearly whether the lab was completed.
 
 Example:
 
-> The lab was completed successfully. The required configuration was implemented, verification evidence was captured, issues were documented and production considerations were recorded.
+> The lab was completed successfully. Part A introduced and verified the new capability. Part B drilled previous skills in a cumulative production-style scenario. Verification evidence was captured, issues were documented and production considerations were recorded.
 
 ---
 
@@ -331,11 +378,14 @@ List the references actually used.
 
 * [ ] Requirements understood
 * [ ] Reference material checked
-* [ ] Implementation completed
-* [ ] Verification evidence captured
+* [ ] Part A completed
+* [ ] Part A verification evidence captured
+* [ ] Part B cumulative drill completed
+* [ ] Part B verification evidence captured
 * [ ] Issues documented
 * [ ] Decisions documented
 * [ ] Security and production considerations documented
+* [ ] Azure/cloud parity considered where relevant
 * [ ] Diagram added if useful
 * [ ] Files or resources documented
 * [ ] AI use documented if relevant
@@ -347,7 +397,7 @@ List the references actually used.
 
 ## 23. Seven Reflection Questions
 
-Ask only these seven questions after the learner has solved the lab:
+Ask only these seven questions after the learner has solved both parts of the lab:
 
 1. What problem did this lab solve?
 2. What was the most important thing you configured, changed or proved?
