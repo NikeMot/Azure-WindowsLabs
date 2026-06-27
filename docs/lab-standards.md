@@ -14,14 +14,28 @@ Every lab must require the learner to:
 * identify requirements
 * work from one primary book source
 * research supporting reference material only where relevant
+* connect Windows behaviour to Modern Operating Systems theory where useful
 * make technical decisions
 * implement the solution
+* use PowerShell as a serious administration and automation tool
 * use AI critically where it is relevant and safe
 * verify the result with evidence
 * troubleshoot at least one realistic issue where appropriate
 * answer exactly seven reflection questions after solving the lab
 
 The learner should focus on solving the lab. The final documentation should be produced from the learner's evidence and answers.
+
+### Lab Count Standard
+
+The main Windows/Azure administrator programme is:
+
+| Phase | Count | Rule |
+| --- | ---: | --- |
+| Core source-led labs | 16 | Two labs per book section from the eight-book structure of Windows Server 2022 and PowerShell |
+| Drill labs | 8 | Created after the 16 core labs to reinforce and pressure-test everything |
+| Total | 24 | Full programme before beginning a new specialist series |
+
+Do not expand the core programme beyond 16 labs unless the user explicitly changes the scope.
 
 ### Source-Led Rule
 
@@ -42,11 +56,46 @@ Supporting references may be used to deepen the lab:
 * Microsoft Intune Cookbook for endpoint-management relevance
 * Active Directory Administration Cookbook for AD-specific implementation
 * Microsoft Learn for current procedures and supported syntax
+* Modern Operating Systems, 5e for OS theory and system behaviour
 
 Operating principles should come from:
 
 * The Practice of System and Network Administration
 * The Practice of Cloud System Administration
+
+### PowerShell Standard
+
+PowerShell must be top-notch across the series.
+
+Every core lab should include at least one meaningful PowerShell element:
+
+* discovery command
+* configuration check
+* evidence capture
+* report generation
+* validation script
+* troubleshooting query
+* automation task
+* error handling pattern
+* transcript or logging practice
+
+Labs 13 to 16 should be heavily PowerShell-focused and should include scripting, automation, remoting, functions, parameters, logging, errors, idempotence and operational safety.
+
+### Modern Operating Systems Standard
+
+Modern Operating Systems, 5e should be used to explain the theory behind the practical Windows work.
+
+Use it where relevant for:
+
+* processes and services
+* memory and resource management
+* filesystems
+* virtualisation
+* networking
+* security and access control
+* reliability and failure modes
+
+The OS theory must support the lab. It should not become passive reading detached from the practical task.
 
 ### Lab Difficulty Standard
 
@@ -58,7 +107,7 @@ A weak lab says:
 
 A strong source-led lab says:
 
-> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, then decide whether the server is ready for the next infrastructure role.
+> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, then decide whether the server is ready for the next infrastructure role.
 
 A weak AI-assisted lab says:
 
@@ -153,7 +202,7 @@ Each lab should identify:
 * the primary book section used
 * supporting book sections, if used
 * relevant Microsoft Learn documentation, if used
-* any operating systems theory reference used
+* Modern Operating Systems theory used, if relevant
 * any AI documentation or AI tool guidance used
 * why each reference was relevant
 
@@ -167,6 +216,7 @@ Every final lab document should answer:
 * What would need approval in production?
 * What evidence would be needed for audit or incident review?
 * What could fail and how would it be detected?
+* What OS concept explains the behaviour or failure mode?
 * If AI was used, what data would be unsafe to expose and how would AI use be governed?
 
 ### Upload Rule
