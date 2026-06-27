@@ -4,7 +4,7 @@
 
 This document defines the lab count and coverage model for the `Azure-WindowsLabs` programme.
 
-The core programme uses exactly **16 source-led labs**. These labs cover the Windows Server 2022 and PowerShell book structure, while integrating PowerShell automation, Azure cloud parity, Intune, Autopilot, Modern Operating Systems theory, and operational principles from the Practice books.
+The core programme uses exactly **16 source-led labs**. These labs cover the Windows Server 2022 and PowerShell book structure, while integrating PowerShell automation, Azure cloud parity, Intune, Autopilot, Modern Operating Systems theory, job-aligned production operations and operational principles from the Practice books.
 
 After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce, combine and pressure-test the skills.
 
@@ -12,9 +12,26 @@ After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce
 
 | Phase | Lab count | Purpose |
 | --- | ---: | --- |
-| Core source-led labs | 16 | Cover the main Windows Server 2022 and PowerShell content and the wider Windows/Azure admin stack |
-| Drill labs | 8 | Reinforce everything through troubleshooting, automation, timed builds and mixed scenarios |
+| Core source-led labs | 16 | Cover the main Windows Server 2022 and PowerShell content and the wider Windows/Azure production infrastructure stack |
+| Drill labs | 8 | Reinforce everything through troubleshooting, automation, timed builds and mixed production scenarios |
 | Total | 24 | Full learning path before moving into a new specialist series |
+
+### Two-Part Core Lab Model
+
+Every core lab must have two parts:
+
+| Part | Name | Purpose |
+| --- | --- | --- |
+| Part A | New Content | Learn and apply the new topic from the primary source |
+| Part B | Cumulative Drill | Drill everything learned so far in a production-style scenario |
+
+Detailed rules are tracked in:
+
+```text
+docs/two-part-lab-model.md
+```
+
+The seven reflection questions remain unchanged. Do not add extra reflection questions just because a lab has two parts.
 
 ### Source Model
 
@@ -47,28 +64,39 @@ The detailed mapping is tracked in:
 docs/azure-cloud-parity-standard.md
 ```
 
+### Mandatory Production Anchors
+
+The following anchors must be included in the 16 core labs and reinforced in the 8 drill labs:
+
+| Anchor | Where it must appear | Purpose |
+| --- | --- | --- |
+| IIS/application outage investigation | Core Labs 08-09, Drill D05, Drill D08 | Prepare for IIS, FTP and application environment support |
+| 100-server estate simulation with PowerShell reporting | Core Labs 13-15, Drill D01, Drill D04 | Prepare for 90/100+ Windows Server estate thinking |
+| VMware/SAN/storage incident simulation | Core Labs 03, 10, 12, Drill D06 | Prepare for VMware, SAN, datastore, snapshot and storage-risk conversations |
+| On-call incident communication pack | Core Labs 12, 16, Drill D08 | Prepare for on-call, stakeholder updates, escalation and PIR notes |
+
 ### Core Labs: 16 Labs
 
 The Windows Server 2022 and PowerShell book has an eight-book structure. The core programme maps to that structure as **two labs per book**. Where the exact internal book title differs from the topic name below, the lab should still follow the corresponding section of the source book.
 
-| Lab | Primary coverage | Lab title | Main outcome | PowerShell / automation emphasis | Azure / cloud parity | Modern OS theory link |
-| --- | --- | --- | --- | --- | --- | --- |
-| 01 | Book 1 — Windows Server and PowerShell foundations | Windows Server and PowerShell Foundation | Understand the server as an admin target | Discovery commands, objects, transcript evidence | Compare local VM/server inspection with Azure VM inventory, resource metadata and Azure Arc representation | OS identity, boot state, kernel/user space, services |
-| 02 | Book 1 — Server Manager, roles and admin model | Server Roles, Features and Remote Administration | Safely inspect and manage roles/features without random installs | `Get-WindowsFeature`, Server Manager comparison, remote admin notes | Compare Server Manager/RSAT with Azure portal, Azure Bastion, Arc extensions and VM run command concepts | System services, privilege boundaries, remote management |
-| 03 | Book 2 — Installation, storage and server configuration | Windows Server Storage and Filesystem Administration | Configure and verify disks, volumes and filesystem state | Disk/volume cmdlets, reporting script | Compare local disks with Azure managed disks, snapshots, data disks, temporary disks and Azure Files | Filesystems, metadata, block devices, persistence |
-| 04 | Book 2 — Updates, services and performance basics | Patching, Services and Performance Readiness | Assess update state, services and performance counters | Service reports, hotfix checks, PerfMon/PowerShell evidence | Compare local patching with Azure Update Manager, automatic VM guest patching, hotpatching and Azure Monitor metrics | Scheduling, resource usage, CPU/memory/I/O bottlenecks |
-| 05 | Book 3 — Active Directory foundations | Build the First Domain Controller | Install AD DS intentionally and verify domain health | AD DS install evidence, AD cmdlets, DNS checks | Compare AD DS with Entra ID, Entra Domain Services and hybrid identity assumptions | Authentication, naming, distributed systems dependencies |
-| 06 | Book 3 — Users, groups, OUs and delegation | AD Object Administration and Delegated Access | Build OU/group model and administer users safely | Bulk user/group scripts, CSV import, validation | Compare AD users/groups/delegation with Entra users, groups, Azure RBAC and PIM concepts | Identity, authorisation, access control models |
-| 07 | Book 4 — DNS and Group Policy | DNS, Group Policy and Client Behaviour | Configure DNS and GPO, verify client application | GPO reports, DNS cmdlets, client verification | Compare GPO with Intune configuration profiles, settings catalog, security baselines and Autopilot-targeted device setup | Name resolution, policy application, caching |
-| 08 | Book 4 — File services and permissions | File Services, Shares and NTFS Access | Build least-privilege file access and troubleshoot denial | Share/NTFS commands, access report script | Compare SMB/NTFS with Azure Files, identity-based access and private endpoint concepts | Filesystem permissions, ACLs, inheritance |
-| 09 | Book 5 — Networking and remote access | Windows Networking and Secure Remote Administration | Configure/administer network profile, firewall and remote management | Firewall rules, WinRM checks, network diagnostics | Compare Windows Firewall/WinRM/RDP with NSGs, ASGs, Bastion, VPN/Private Link and Network Watcher concepts | TCP/IP, ports, sockets, remote procedure concepts |
-| 10 | Book 5 — Virtualisation/hybrid readiness | Hyper-V or VM Operations and Azure Readiness | Understand VM operations, checkpoints and cloud migration readiness | VM inventory, checkpoint notes, Azure mapping | Compare Hyper-V/local VM operations with Azure VMs, images, availability zones, disks, snapshots and Azure Arc | Virtualisation, isolation, resource scheduling |
-| 11 | Book 6 — Security and local protection | Windows Security Baseline | Apply and verify local security controls | Security policy export, local users/groups, firewall audit | Compare local hardening with Defender for Cloud, Azure Policy, Intune security baselines, LAPS and Conditional Access signals | Protection rings, least privilege, attack surface |
-| 12 | Book 6 — Backup, recovery and operational resilience | Backup, Restore and Recovery Readiness | Prove backup/recovery thinking before critical roles | Backup checks, recovery notes, restore validation | Compare local recovery with Azure Backup, Recovery Services vault, Azure VM backup and restore validation | Reliability, failure modes, durable storage |
-| 13 | Book 7 — PowerShell administration | PowerShell Objects, Pipeline and Reporting | Produce admin reports from server/AD/Azure-style data | Objects, pipeline, formatting, CSV/JSON export | Produce local and Azure-shaped reports using Azure CLI/Az concepts, Resource Graph-style thinking and Log Analytics evidence | Processes, streams, structured data |
-| 14 | Book 7 — PowerShell remoting and modules | PowerShell Remoting and Admin Tooling | Use remoting/module patterns safely | Remoting, modules, error handling, transcripts | Compare PowerShell Remoting with Azure Run Command, Automation runbooks, Arc extensions and managed identity boundaries | Remote execution, trust boundaries, network services |
-| 15 | Book 8 — PowerShell scripting and automation | Production-Style PowerShell Automation | Build reusable admin script with parameters, validation and logging | Functions, parameters, idempotence, logging, errors | Convert local automation thinking into Azure CLI/Az PowerShell, Azure Automation, GitHub Actions or Functions design | Automation safety, state management, failure handling |
-| 16 | Book 8 — Integrated Windows/Azure operations | Windows Server to Azure Operations Bridge | Connect local admin thinking to Azure monitoring, identity, backup or governance | Azure CLI/PowerShell mapping, KQL starter, runbook | Implement or design cloud parity across Azure Monitor, Backup, Update Manager, Arc, Entra, Intune, Autopilot and governance | Cloud abstraction, monitoring, distributed reliability |
+| Lab | Primary coverage | Lab title | Part A: new content | Part B: cumulative drill |
+| --- | --- | --- | --- | --- |
+| 01 | Book 1 — Windows Server and PowerShell foundations | Windows Server and PowerShell Foundation | Inspect one Windows Server with PowerShell, transcript evidence and OS theory | Repeat server inspection from memory and produce a readiness note |
+| 02 | Book 1 — Server Manager, roles and admin model | Server Roles, Features and Remote Administration | Inspect roles/features, Server Manager, RSAT/remote admin and Azure management comparison | Re-run Lab 01 readiness checks, then add role/feature and remote admin evidence |
+| 03 | Book 2 — Installation, storage and server configuration | Windows Server Storage and Filesystem Administration | Configure/inspect disks, volumes, NTFS and Azure managed disk comparison | Drill server readiness plus storage capacity, SAN/LUN/datastore and snapshot-vs-backup reasoning |
+| 04 | Book 2 — Updates, services and performance basics | Patching, Services and Performance Readiness | Assess Windows Update, services, hotfixes, performance counters and Azure Update Manager | Drill server/storage readiness plus service health, performance and patch-state evidence |
+| 05 | Book 3 — Active Directory foundations | Build the First Domain Controller | Install/configure AD DS intentionally and verify domain/DNS health | Drill Labs 01-04 checks, then add AD health and replication-style evidence |
+| 06 | Book 3 — Users, groups, OUs and delegation | AD Object Administration and Delegated Access | Build OU/group/user/delegation model with PowerShell and CSV validation | Drill previous checks plus joiner/mover/leaver workflow and access verification |
+| 07 | Book 4 — DNS and Group Policy | DNS, Group Policy and Client Behaviour | Configure DNS/GPO and compare GPO with Intune policy models | Drill AD/user/DNS/GPO plus DNS records relevant to applications and mail-flow concepts |
+| 08 | Book 4 — File services and permissions | File Services, Shares, IIS and FTP Access | Configure file services plus IIS/FTP concepts where appropriate | Drill access-denied troubleshooting plus app/file access, IIS binding/log and FTP port reasoning |
+| 09 | Book 5 — Networking and remote access | Windows Networking and Application Connectivity | Configure firewall/remote admin/network diagnostics for RDP, WinRM, IIS/FTP/app access | Drill app unreachable scenario using DNS, firewall, service state, IIS/FTP and Azure NSG-style thinking |
+| 10 | Book 5 — Virtualisation/hybrid readiness | VMware, Hyper-V and Azure VM Operations | Compare VM lifecycle, snapshots/checkpoints, datastores, vNICs and Azure VM concepts | Drill storage/network/server readiness through a simulated VM/datastore/capacity incident |
+| 11 | Book 6 — Security and local protection | Windows Security Baseline | Apply and verify local hardening, LAPS concepts, least privilege and auditability | Drill previous infrastructure checks plus security finding, privilege review and remediation note |
+| 12 | Book 6 — Backup, recovery and operational resilience | Backup, Restore and Recovery Readiness | Prove backup/restore thinking, snapshot distinction and Azure Backup comparison | Drill recovery incident with stakeholder update, rollback plan and storage/SAN failure reasoning |
+| 13 | Book 7 — PowerShell administration | PowerShell Objects, Pipeline and Estate Reporting | Build structured reports using objects, pipeline, CSV/JSON and Azure-shaped output | Drill a 100-server estate simulation: inventory, role, patch, backup, app and monitoring report |
+| 14 | Book 7 — PowerShell remoting and modules | PowerShell Remoting and Admin Tooling | Use remoting/module patterns, transcripts, errors and safe admin boundaries | Drill production fleet administration across simulated servers with remoting/run command comparison |
+| 15 | Book 8 — PowerShell scripting and automation | Production-Style PowerShell Automation | Build reusable support automation with parameters, validation, logging and idempotence thinking | Drill estate automation for IIS/app health, services, disk, patch or backup checks |
+| 16 | Book 8 — Integrated Windows/Azure operations | Windows Server to Azure Operations Bridge | Integrate Windows, AD, DNS, IIS/app, monitoring, backup, Azure, Intune/Autopilot and runbook thinking | Final cumulative core drill: on-call scenario, triage, evidence, stakeholder update, fix plan and PIR note |
 
 ### Dedicated PowerShell Standard
 
@@ -82,6 +110,7 @@ By the end of the 16 core labs, the learner should be able to:
 * export evidence to CSV, JSON and text
 * query Windows Server state repeatably
 * use AD, DNS, networking and firewall cmdlets
+* inspect IIS, service, event log, disk, backup and estate health information
 * write scripts with parameters and validation
 * handle errors intentionally
 * create logs and transcripts
@@ -122,28 +151,45 @@ Use it to explain:
 
 | Concept | Applied in labs |
 | --- | --- |
-| Processes and services | Windows services, startup behaviour, failures and service recovery |
+| Processes and services | Windows services, IIS/app pools, startup behaviour, failures and service recovery |
 | Memory and resource management | Performance readiness, monitoring, capacity, VM sizing |
 | Filesystems | NTFS, shares, permissions, backup and restore |
-| Virtualisation | Hyper-V, VM checkpoints, Azure VMs and cloud abstraction |
-| Networking | DNS, TCP/IP, firewall, WinRM, RDP and Azure networking |
+| Virtualisation | VMware, Hyper-V, VM checkpoints, Azure VMs and cloud abstraction |
+| Networking | DNS, TCP/IP, firewall, WinRM, RDP, IIS, FTP and Azure networking |
 | Security | ACLs, privileges, identity, isolation and attack surface |
 | Reliability | Backups, monitoring, incident response, failure domains |
 
 ### Drill Labs: 8 Labs
 
-The drill block starts only after the 16 core labs are complete.
+The drill block starts only after the 16 core labs are complete. These are full production simulations, not new theory labs.
 
 | Drill | Title | Purpose |
 | --- | --- | --- |
-| D01 | Timed Server Readiness Assessment | Repeat Lab 1 style inspection quickly and accurately from a fresh VM, then map findings to Azure VM or Arc evidence |
+| D01 | Timed 100-Server Estate Readiness Assessment | Assess a simulated 100-server estate quickly and accurately, then map findings to Azure VM or Arc evidence |
 | D02 | Broken AD Login Drill | Diagnose user login failure across AD, DNS, GPO, Entra comparison and local client evidence |
-| D03 | File Access Denied Drill | Troubleshoot NTFS/share/group membership access issue and map the equivalent Azure Files access model |
-| D04 | PowerShell Automation Drill | Build a working admin script under constraints using logs, validation and Azure-shaped output |
-| D05 | Network and Firewall Drill | Diagnose blocked remote admin or application connectivity across Windows Firewall and NSG-style thinking |
-| D06 | Backup and Restore Drill | Prove recovery of a file, config or server role state and compare with Azure Backup restore evidence |
+| D03 | File or App Access Denied Drill | Troubleshoot NTFS/share/group membership/IIS app access issue and map equivalent Azure Files access thinking |
+| D04 | PowerShell Estate Automation Drill | Build a working admin script under constraints using logs, validation and Azure-shaped output |
+| D05 | IIS/FTP/Application Unreachable Drill | Diagnose blocked or broken application access across DNS, firewall, IIS/FTP, service state and NSG-style reasoning |
+| D06 | VMware/SAN/Backup Recovery Drill | Resolve a storage/snapshot/backup misunderstanding and produce recovery evidence |
 | D07 | Azure Hybrid Readiness Drill | Map local server state to Azure Monitor, Backup, Arc, Update Manager and governance readiness |
-| D08 | Final Mixed Operations Drill | Combine Windows Server, AD, PowerShell, Azure, Intune, Autopilot, monitoring, security and AI-assisted review |
+| D08 | Final On-Call Production Incident Drill | Combine alert, triage, evidence, stakeholder update, fix, rollback plan and post-incident review notes |
+
+### Required Final Portfolio Artefacts
+
+By the end of the 16 core labs and 8 drill labs, the repository should contain or generate:
+
+* server estate inventory report
+* IIS outage runbook
+* AD login failure runbook
+* DNS/mail-flow troubleshooting checklist
+* backup/restore evidence report
+* patching/change plan
+* on-call incident report
+* stakeholder update examples
+* PowerShell automation scripts
+* Azure/cloud parity comparison notes
+* VMware/SAN/storage incident notes
+* Linux support quick-check notes
 
 ### Completion Rule
 
@@ -151,4 +197,4 @@ Do not expand the core programme beyond 16 labs. Do not reduce it below 16 unles
 
 After the 16 core labs, create the 8 drill labs as a separate phase.
 
-Each lab remains source-led, practical, evidence-based and completed through the learner workflow: solve the lab, send evidence, answer seven questions, then the assistant documents and uploads the final version.
+Each core lab has Part A for new content and Part B for cumulative drilling. Each lab remains source-led, practical, evidence-based and completed through the learner workflow: solve the lab, send evidence, answer seven questions, then the assistant documents and uploads the final version.
