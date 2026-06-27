@@ -12,7 +12,8 @@ Every lab must require the learner to:
 
 * understand a scenario
 * identify requirements
-* research the reference material
+* work from one primary book source
+* research supporting reference material only where relevant
 * make technical decisions
 * implement the solution
 * use AI critically where it is relevant and safe
@@ -22,17 +23,42 @@ Every lab must require the learner to:
 
 The learner should focus on solving the lab. The final documentation should be produced from the learner's evidence and answers.
 
+### Source-Led Rule
+
+Each lab should be anchored to one primary book section.
+
+For the Windows administration track, the default primary source is:
+
+```text
+Windows Server 2022 and PowerShell
+```
+
+The lab should cover one meaningful unit from that book, such as one chapter, module, section or tightly related topic. The lab may be harder than the book, but it should clearly come from the book.
+
+Supporting references may be used to deepen the lab:
+
+* Learn PowerShell in a Month of Lunches for PowerShell technique
+* Learning Microsoft Azure for Azure or hybrid relevance
+* Microsoft Intune Cookbook for endpoint-management relevance
+* Active Directory Administration Cookbook for AD-specific implementation
+* Microsoft Learn for current procedures and supported syntax
+
+Operating principles should come from:
+
+* The Practice of System and Network Administration
+* The Practice of Cloud System Administration
+
 ### Lab Difficulty Standard
 
 Labs should be harder than the source material.
 
 A weak lab says:
 
-> Create an Active Directory user.
+> Check server information.
 
-A strong lab says:
+A strong source-led lab says:
 
-> HR provides starters, movers and leavers. Design the OU and group model, automate account changes, apply access control, verify login, intentionally break one user's access, diagnose the issue and document the operational improvement.
+> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, then decide whether the server is ready for the next infrastructure role.
 
 A weak AI-assisted lab says:
 
@@ -55,7 +81,7 @@ Each completed lab document should follow `docs/lab-output-template.md` and incl
 
 1. Lab Summary
 2. Scenario
-3. Reference Material
+3. Source Mapping
 4. Requirements
 5. Constraints
 6. Assumptions
@@ -65,16 +91,17 @@ Each completed lab document should follow `docs/lab-output-template.md` and incl
 10. Key Commands Used
 11. Files, Resources or Objects Created or Changed
 12. Verification Evidence
-13. Diagram
-14. Issues Encountered
-15. Decisions Made
-16. Security and Production Considerations
-17. Final Outcome
-18. What I Learned
-19. What I Would Improve in Production
-20. References Used
-21. Completion Checklist
-22. Seven Reflection Questions
+13. AI Assistance Used, if relevant
+14. Diagram, if useful
+15. Issues Encountered
+16. Decisions Made
+17. Security and Production Considerations
+18. Final Outcome
+19. What I Learned
+20. What I Would Improve in Production
+21. References Used
+22. Completion Checklist
+23. Seven Reflection Questions
 
 ### Evidence Standard
 
@@ -123,12 +150,12 @@ At the end of each lab, ask only these seven questions:
 
 Each lab should identify:
 
-* the primary book or chapter used
-* supporting book sections
-* relevant Microsoft Learn documentation
+* the primary book section used
+* supporting book sections, if used
+* relevant Microsoft Learn documentation, if used
 * any operating systems theory reference used
 * any AI documentation or AI tool guidance used
-* why the reference was relevant
+* why each reference was relevant
 
 ### Production Standard
 
