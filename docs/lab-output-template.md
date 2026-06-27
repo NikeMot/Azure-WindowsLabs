@@ -11,6 +11,12 @@ Every core lab has two parts:
 | Part A — New Content | Learn and apply the new topic from the primary source section |
 | Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style scenario |
 
+Every lab also has a mandatory break/fix cycle:
+
+```text
+Known-good state -> deliberate failure -> detection -> diagnosis -> fix -> recovery verification -> prevention note
+```
+
 ---
 
 # Lab Title
@@ -29,7 +35,7 @@ Every core lab has two parts:
 
 State the purpose of the lab in 2–4 lines.
 
-This lab is not a copy-paste tutorial. The learner is expected to understand the requirements, check the reference material, make decisions, complete both parts and prove the final setup works.
+This lab is not a copy-paste tutorial. The learner is expected to understand the requirements, check the reference material, make decisions, complete both parts, deliberately break something safely, fix it and prove the final setup works.
 
 ---
 
@@ -43,6 +49,7 @@ Include:
 * the Windows Server / Azure / production context
 * why the work matters
 * what would happen if this was done badly
+* what failure will be introduced or investigated
 
 ---
 
@@ -55,6 +62,7 @@ Include:
 | Azure support | Learning Microsoft Azure / Azure Cookbook |  |
 | Endpoint support | Microsoft Intune Cookbook / Microsoft Learn |  |
 | OS theory | Modern Operating Systems, 5e |  |
+| Break/fix standard | Break/Fix Lab Standard |  |
 | Operational principle | The Practice of System and Network Administration |  |
 | Cloud operations principle | The Practice of Cloud System Administration |  |
 | Current procedure | Microsoft Learn |  |
@@ -69,6 +77,7 @@ Include:
 | R1 |  | Part A | Not started |
 | R2 |  | Part A | Not started |
 | R3 |  | Part B | Not started |
+| R4 | Complete a controlled break/fix cycle | Part A / Part B | Not started |
 
 ---
 
@@ -86,6 +95,10 @@ You must not:
 * paste unsanitised AI prompts or outputs containing sensitive information
 * rely only on the GUI when PowerShell, Azure CLI, logs or policy evidence would provide better proof
 * mark the lab complete without verification evidence for both Part A and Part B
+* mark the lab complete without break/fix evidence
+* break real personal, work or company systems
+* run destructive actions without a rollback path
+* create unmanaged cloud cost
 
 ---
 
@@ -101,6 +114,7 @@ Examples:
 * The lab may use local virtual machines and/or Azure resources.
 * Cost controls and cleanup are required for cloud resources.
 * Physical data-centre tasks may be simulated through diagrams, checklists or remote-hands instructions.
+* Break/fix work is performed only against controlled lab resources.
 
 ---
 
@@ -125,6 +139,7 @@ Include relevant items such as:
 * VMware/SAN/storage concepts, if relevant
 * Linux checks, if relevant
 * incident or stakeholder communication artefacts, if relevant
+* break/fix outcome and prevention note
 * AI-assisted artefacts, if relevant
 
 ---
@@ -138,6 +153,7 @@ You do not need to manually write the final lab report. After solving the lab, s
 | Command output evidence | Part A / Part B | Proves configuration and troubleshooting work |
 | Notes on changes made | Part A / Part B | Allows implementation to be documented clearly |
 | Issues/errors encountered | Part A / Part B | Allows troubleshooting evidence to be documented |
+| Break/fix evidence | Part A / Part B | Proves failure detection, diagnosis, fix and recovery verification |
 | Scripts or generated reports | Part A / Part B | Proves automation and repeatability |
 | Seven reflection answers | Final | Allows the final lab report to be completed |
 
@@ -175,6 +191,19 @@ You need to prove:
 * 
 * 
 
+### Task A3 — Controlled New-Content Break/Fix
+
+Break something related to the new topic safely.
+
+You need to prove:
+
+* known-good state before the break
+* the controlled fault introduced
+* symptom observed
+* diagnostic evidence
+* fix or rollback
+* recovery verification
+
 ---
 
 ## Part B — Cumulative Drill
@@ -204,53 +233,77 @@ You need to prove:
 * 
 * 
 
-### Task B2 —
+### Task B2 — Cumulative Break/Fix Drill
 
-Describe the verification or troubleshooting task.
+Describe the production-style fault to diagnose and fix.
 
 You need to prove:
 
-* 
-* 
-* 
+* what broke
+* how it was detected
+* what evidence isolated the fault domain
+* what fixed it
+* how recovery was verified
+* what would prevent recurrence
 
 ---
 
-## 10. Key Commands Used
+## 10. Break/Fix Exercise
+
+Every completed lab must document the break/fix cycle.
+
+| Break/Fix Item | Evidence / Notes |
+| --- | --- |
+| Known-good state |  |
+| Controlled fault introduced |  |
+| Expected failure |  |
+| Actual symptom |  |
+| Detection method |  |
+| Diagnostic evidence |  |
+| Hypothesis |  |
+| Root cause or likely cause |  |
+| Fix or rollback applied |  |
+| Recovery verification |  |
+| Production prevention |  |
+| Monitoring or alert that should catch this |  |
+
+---
+
+## 11. Key Commands Used
 
 Record the important commands used.
 
 | Command | Part | Purpose |
 | --- | --- | --- |
-|  | Part A / Part B |  |
-|  | Part A / Part B |  |
-|  | Part A / Part B |  |
+|  | Part A / Part B / Break-Fix |  |
+|  | Part A / Part B / Break-Fix |  |
+|  | Part A / Part B / Break-Fix |  |
 
 ---
 
-## 11. Files, Resources or Objects Created or Changed
+## 12. Files, Resources or Objects Created or Changed
 
 | Path / Object / Resource | Part | Purpose |
 | --- | --- | --- |
-|  | Part A / Part B |  |
-|  | Part A / Part B |  |
-|  | Part A / Part B |  |
+|  | Part A / Part B / Break-Fix |  |
+|  | Part A / Part B / Break-Fix |  |
+|  | Part A / Part B / Break-Fix |  |
 
 ---
 
-## 12. Verification Evidence
+## 13. Verification Evidence
 
-This section proves that both parts worked.
+This section proves that both parts worked and the break/fix recovery succeeded.
 
 | Check | Part | Evidence | Result |
 | --- | --- | --- | --- |
 |  | Part A |  | Passed / Failed |
 |  | Part B |  | Passed / Failed |
-|  | Part B |  | Passed / Failed |
+| Break/fix recovery verified | Break-Fix |  | Passed / Failed |
 
 ---
 
-## 13. AI Assistance Used
+## 14. AI Assistance Used
 
 Complete this section only if AI was used during the lab.
 
@@ -269,16 +322,18 @@ If AI was not used, write:
 
 ---
 
-## 14. Diagram
+## 15. Diagram
 
 Use a diagram if it improves understanding.
 
 ```mermaid
 flowchart LR
-    A[Part A: New Content] --> B[Implementation Evidence]
-    B --> C[Part B: Cumulative Drill]
-    C --> D[Verification Evidence]
-    D --> E[Final Documentation]
+    A[Known-good state] --> B[Controlled fault]
+    B --> C[Detection]
+    C --> D[Diagnosis]
+    D --> E[Fix or rollback]
+    E --> F[Recovery verification]
+    F --> G[Prevention note]
 ```
 
 If no diagram is needed, write:
@@ -287,28 +342,28 @@ If no diagram is needed, write:
 
 ---
 
-## 15. Issues Encountered
+## 16. Issues Encountered
 
 | Issue | Part | Cause | Fix / Investigation |
 | --- | --- | --- | --- |
-|  | Part A / Part B |  |  |
+|  | Part A / Part B / Break-Fix |  |  |
 
-If there were no issues, write:
+If there were no unexpected issues, write:
 
-> No major issues encountered.
+> No unexpected issues encountered beyond the planned break/fix exercise.
 
 ---
 
-## 16. Decisions Made
+## 17. Decisions Made
 
 | Decision | Part | Reason |
 | --- | --- | --- |
-|  | Part A / Part B |  |
-|  | Part A / Part B |  |
+|  | Part A / Part B / Break-Fix |  |
+|  | Part A / Part B / Break-Fix |  |
 
 ---
 
-## 17. Security and Production Considerations
+## 18. Security and Production Considerations
 
 Explain the production relevance of this lab.
 
@@ -329,21 +384,22 @@ Cover where relevant:
 * Azure/cloud parity
 * VMware/SAN or physical data-centre limitations
 * stakeholder communication
+* break/fix prevention and monitoring
 * AI governance, if AI was used
 
 ---
 
-## 18. Final Outcome
+## 19. Final Outcome
 
 State clearly whether the lab was completed.
 
 Example:
 
-> The lab was completed successfully. Part A introduced and verified the new capability. Part B drilled previous skills in a cumulative production-style scenario. Verification evidence was captured, issues were documented and production considerations were recorded.
+> The lab was completed successfully. Part A introduced and verified the new capability. Part B drilled previous skills in a cumulative production-style scenario. A controlled break/fix exercise was completed, recovery was verified, and prevention notes were documented.
 
 ---
 
-## 19. What I Learned
+## 20. What I Learned
 
 Summarise the learner's main learning points from the evidence and reflection answers.
 
@@ -353,7 +409,7 @@ Summarise the learner's main learning points from the evidence and reflection an
 
 ---
 
-## 20. What I Would Improve in Production
+## 21. What I Would Improve in Production
 
 Summarise practical production improvements.
 
@@ -363,7 +419,7 @@ Summarise practical production improvements.
 
 ---
 
-## 21. References Used
+## 22. References Used
 
 List the references actually used.
 
@@ -374,14 +430,23 @@ List the references actually used.
 
 ---
 
-## 22. Completion Checklist
+## 23. Completion Checklist
 
 * [ ] Requirements understood
 * [ ] Reference material checked
 * [ ] Part A completed
 * [ ] Part A verification evidence captured
+* [ ] Part A break/fix attempted where relevant
 * [ ] Part B cumulative drill completed
 * [ ] Part B verification evidence captured
+* [ ] Part B break/fix completed
+* [ ] Known-good state documented
+* [ ] Controlled fault documented
+* [ ] Failure symptom documented
+* [ ] Diagnostic evidence captured
+* [ ] Fix or rollback documented
+* [ ] Recovery verification captured
+* [ ] Prevention or monitoring improvement documented
 * [ ] Issues documented
 * [ ] Decisions documented
 * [ ] Security and production considerations documented
@@ -395,7 +460,7 @@ List the references actually used.
 
 ---
 
-## 23. Seven Reflection Questions
+## 24. Seven Reflection Questions
 
 Ask only these seven questions after the learner has solved both parts of the lab:
 
