@@ -13,6 +13,8 @@ Every lab must require the learner to:
 * understand a scenario
 * identify requirements
 * work from one primary book source
+* complete Part A for new content
+* complete Part B for cumulative drilling of everything learned so far
 * research supporting reference material only where relevant
 * connect Windows behaviour to Modern Operating Systems theory where useful
 * map local Windows administration to Azure, Intune, Entra, Autopilot or hybrid cloud equivalents where relevant
@@ -37,6 +39,26 @@ The main Windows/Azure administrator programme is:
 | Total | 24 | Full programme before beginning a new specialist series |
 
 Do not expand the core programme beyond 16 labs unless the user explicitly changes the scope.
+
+### Two-Part Lab Standard
+
+Every core lab must use the two-part model from `docs/two-part-lab-model.md`.
+
+| Part | Name | Requirement |
+| --- | --- | --- |
+| Part A | New Content | Introduce and practise the new topic from the primary book section |
+| Part B | Cumulative Drill | Drill everything learned so far through a realistic production-style scenario |
+
+Part B must become progressively harder as the series advances.
+
+| Lab range | Cumulative drill expectation |
+| --- | --- |
+| Labs 01-04 | Server inspection, evidence capture, services, updates, storage and networking basics |
+| Labs 05-08 | AD, DNS, GPO, users/groups, file services, IIS/FTP and access troubleshooting |
+| Labs 09-12 | Networking, firewall, VMware/SAN concepts, security, backup, recovery and incident thinking |
+| Labs 13-16 | Estate-scale PowerShell, automation, Azure/hybrid operations, monitoring, runbooks and stakeholder communications |
+
+The seven reflection questions remain fixed. Do not add more reflection questions because a lab has two parts.
 
 ### Source-Led Rule
 
@@ -94,6 +116,19 @@ Every local Windows capability should be connected where relevant to:
 * Windows Update for Business and Windows Autopatch
 * Azure CLI, Az PowerShell and automation patterns
 
+### Job Alignment Anchors
+
+The following anchors are mandatory because they directly map to the target production infrastructure job.
+
+| Anchor | Evidence required |
+| --- | --- |
+| IIS/application outage investigation | IIS site/app pool/binding/log evidence, port/firewall/DNS checks, outage notes and runbook |
+| 100-server estate simulation with PowerShell reporting | Inventory CSV, server-role mapping, criticality, patch/backup/monitoring status and generated reports |
+| VMware/SAN/storage incident simulation | VM lifecycle notes, snapshot versus backup distinction, datastore/LUN/capacity issue and recovery/escalation notes |
+| On-call incident communication pack | Severity, timeline, impact, stakeholder update, escalation, resolution, rollback and PIR notes |
+
+These anchors should appear in both the core labs and the 8 drill labs.
+
 ### PowerShell Standard
 
 PowerShell must be top-notch across the series.
@@ -139,7 +174,7 @@ A weak lab says:
 
 A strong source-led lab says:
 
-> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then decide whether the server is ready for the next infrastructure role.
+> Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then drill the earlier skills under a cumulative production scenario.
 
 A weak AI-assisted lab says:
 
@@ -153,7 +188,7 @@ A strong AI-assisted lab says:
 
 | Role | Responsibility |
 | --- | --- |
-| Learner | Solve the technical lab, collect safe evidence, report issues encountered and answer seven reflection questions |
+| Learner | Solve Part A and Part B, collect safe evidence, report issues encountered and answer seven reflection questions |
 | Assistant | Write the final documentation, apply the lab template, format evidence, add production considerations and upload the completed lab to the correct folder |
 
 ### Required Lab Sections
@@ -168,7 +203,7 @@ Each completed lab document should follow `docs/lab-output-template.md` and incl
 6. Assumptions
 7. Expected Environment or Target State
 8. Deliverables
-9. Implementation Tasks
+9. Implementation Tasks: Part A and Part B
 10. Key Commands Used
 11. Files, Resources or Objects Created or Changed
 12. Verification Evidence
@@ -195,7 +230,10 @@ Each completed lab should include safe evidence such as:
 * Entra sign-in log findings
 * Intune device compliance observations
 * Azure Monitor or Log Analytics query results
+* IIS logs where relevant
+* DNS or network test output where relevant
 * backup or restore verification
+* incident communication outputs where relevant
 * screenshots only when they do not expose sensitive data
 
 Do not include secrets, tenant identifiers, subscription IDs, private keys, tokens or company information.
@@ -251,6 +289,7 @@ Every final lab document should answer:
 * What could fail and how would it be detected?
 * What OS concept explains the behaviour or failure mode?
 * What is the Azure, Intune, Entra or hybrid equivalent of this local capability?
+* What earlier skills were drilled again in Part B?
 * If AI was used, what data would be unsafe to expose and how would AI use be governed?
 
 ### Upload Rule
