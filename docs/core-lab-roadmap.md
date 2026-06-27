@@ -6,7 +6,7 @@ This document defines the lab count and coverage model for the `Azure-WindowsLab
 
 The core programme uses exactly **16 source-led labs**. These labs cover the Windows Server 2022 and PowerShell book structure, while integrating PowerShell automation, Azure cloud parity, Intune, Autopilot, Modern Operating Systems theory, job-aligned production operations and operational principles from the Practice books.
 
-After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce, combine and pressure-test the skills.
+After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce, combine and pressure-test the skills. The final drill is an SRE-style capstone.
 
 ### Lab Count Decision
 
@@ -46,6 +46,7 @@ The seven reflection questions remain unchanged. Do not add extra reflection que
 | Operational principles | The Practice of System and Network Administration | Documentation, troubleshooting, service ownership, change control and operational maturity |
 | Cloud operations principles | The Practice of Cloud System Administration | Automation, reliability, monitoring, scaling, failure handling and cloud operations thinking |
 | Current procedure | Microsoft Learn | Current Azure, Intune, Autopilot, Entra, Monitor, Backup, Arc and Update Manager guidance |
+| SRE concepts | SRE capstone standard | Service reliability, SLI/SLO thinking, incident response, toil reduction and post-incident review |
 | AI support | AI Usage Standard / Copilot documentation | Safe AI use for scripting, KQL, troubleshooting, documentation and review |
 
 ### Cloud Parity Rule
@@ -74,6 +75,34 @@ The following anchors must be included in the 16 core labs and reinforced in the
 | 100-server estate simulation with PowerShell reporting | Core Labs 13-15, Drill D01, Drill D04 | Prepare for 90/100+ Windows Server estate thinking |
 | VMware/SAN/storage incident simulation | Core Labs 03, 10, 12, Drill D06 | Prepare for VMware, SAN, datastore, snapshot and storage-risk conversations |
 | On-call incident communication pack | Core Labs 12, 16, Drill D08 | Prepare for on-call, stakeholder updates, escalation and PIR notes |
+| SRE-style reliability capstone | Core Lab 16, Drill D08 | Prepare for SRE/platform-style service ownership, reliability and incident response |
+
+### SRE Capstone Rule
+
+The capstone must be SRE-related.
+
+It must simulate operating a production service rather than only configuring infrastructure. The service should include Windows Server, AD/DNS dependency, IIS or application access, storage, monitoring, backup/recovery, Azure or hybrid comparison, incident response, stakeholder communication and PowerShell automation.
+
+The detailed standard is tracked in:
+
+```text
+docs/sre-capstone-standard.md
+```
+
+The capstone must include:
+
+* service overview
+* dependency map
+* SLI/SLO definition
+* monitoring evidence
+* alert or incident trigger
+* incident timeline
+* technical triage notes
+* stakeholder update
+* recovery or rollback plan
+* post-incident review
+* automation artefact
+* reliability improvement backlog
 
 ### Core Labs: 16 Labs
 
@@ -96,7 +125,7 @@ The Windows Server 2022 and PowerShell book has an eight-book structure. The cor
 | 13 | Book 7 — PowerShell administration | PowerShell Objects, Pipeline and Estate Reporting | Build structured reports using objects, pipeline, CSV/JSON and Azure-shaped output | Drill a 100-server estate simulation: inventory, role, patch, backup, app and monitoring report |
 | 14 | Book 7 — PowerShell remoting and modules | PowerShell Remoting and Admin Tooling | Use remoting/module patterns, transcripts, errors and safe admin boundaries | Drill production fleet administration across simulated servers with remoting/run command comparison |
 | 15 | Book 8 — PowerShell scripting and automation | Production-Style PowerShell Automation | Build reusable support automation with parameters, validation, logging and idempotence thinking | Drill estate automation for IIS/app health, services, disk, patch or backup checks |
-| 16 | Book 8 — Integrated Windows/Azure operations | Windows Server to Azure Operations Bridge | Integrate Windows, AD, DNS, IIS/app, monitoring, backup, Azure, Intune/Autopilot and runbook thinking | Final cumulative core drill: on-call scenario, triage, evidence, stakeholder update, fix plan and PIR note |
+| 16 | Book 8 — Integrated Windows/Azure/SRE operations | SRE-Style Windows Service Reliability Capstone | Define and operate a Windows/IIS service with AD, DNS, storage, monitoring, backup, Azure/hybrid comparison and PowerShell automation | Final cumulative SRE drill: service degradation or outage, SLI/SLO evidence, triage, mitigation, stakeholder update, rollback/recovery, PIR and reliability backlog |
 
 ### Dedicated PowerShell Standard
 
@@ -118,6 +147,7 @@ By the end of the 16 core labs, the learner should be able to:
 * avoid unsafe automation
 * explain idempotence and rollback thinking
 * compare local PowerShell administration with Azure CLI, Az PowerShell and cloud runbook patterns
+* build an SRE-style health check or incident evidence collector
 * use PowerShell evidence in operational documentation
 
 ### Azure Practical Standard
@@ -142,6 +172,22 @@ By the end of the core labs, the learner should be able to explain and, where co
 * Windows Update for Business and Windows Autopatch
 * Azure CLI, Az PowerShell and automation patterns
 * cloud cost control and cleanup
+
+### SRE Practical Standard
+
+By the end of the capstone, the learner should be able to explain and demonstrate:
+
+* service ownership
+* dependency mapping
+* basic SLI/SLO design
+* availability and error-budget thinking
+* monitoring and alert evidence
+* incident severity and triage
+* mitigation versus root-cause fix
+* rollback/recovery planning
+* post-incident review
+* toil reduction through automation
+* reliability improvement backlog
 
 ### Modern Operating Systems Standard
 
@@ -172,7 +218,7 @@ The drill block starts only after the 16 core labs are complete. These are full 
 | D05 | IIS/FTP/Application Unreachable Drill | Diagnose blocked or broken application access across DNS, firewall, IIS/FTP, service state and NSG-style reasoning |
 | D06 | VMware/SAN/Backup Recovery Drill | Resolve a storage/snapshot/backup misunderstanding and produce recovery evidence |
 | D07 | Azure Hybrid Readiness Drill | Map local server state to Azure Monitor, Backup, Arc, Update Manager and governance readiness |
-| D08 | Final On-Call Production Incident Drill | Combine alert, triage, evidence, stakeholder update, fix, rollback plan and post-incident review notes |
+| D08 | Final SRE Production Incident Capstone | Operate a simulated Windows/IIS service through degradation or outage: SLI/SLO check, alert, triage, mitigation, recovery, stakeholder update, PIR and reliability backlog |
 
 ### Required Final Portfolio Artefacts
 
@@ -190,6 +236,12 @@ By the end of the 16 core labs and 8 drill labs, the repository should contain o
 * Azure/cloud parity comparison notes
 * VMware/SAN/storage incident notes
 * Linux support quick-check notes
+* SRE service overview
+* service dependency map
+* SLI/SLO definition
+* incident timeline
+* post-incident review
+* reliability improvement backlog
 
 ### Completion Rule
 
