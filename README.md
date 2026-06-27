@@ -10,11 +10,16 @@ The labs are not intended to be copy-paste tutorials. Each lab should require re
 
 ### Lab Design Philosophy
 
-The primary design guide for this repository is **The Practice of Cloud System Administration**. The labs should therefore focus on operational competence, not just product configuration.
+This repository is source-led.
+
+The core lab series is built from **Windows Server 2022 and PowerShell** as the primary source. The book has an eight-book structure, so the programme uses exactly **16 core labs**, with two labs mapped to each book section.
+
+After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce and pressure-test the full skillset.
 
 Each lab should develop the ability to:
 
 * understand the business or operational scenario
+* work from one primary book section
 * design a sensible technical approach
 * implement the solution safely
 * automate where appropriate
@@ -57,6 +62,16 @@ Each lab should develop the ability to:
 | `09-hybrid-operations-capstone/` | Full hybrid Microsoft operations scenarios and final assessment labs |
 | `10-ai-assisted-admin-operations/` | Safe and practical use of AI for scripting, troubleshooting, KQL, documentation and operational analysis |
 
+### Lab Roadmap
+
+The roadmap is tracked in `docs/core-lab-roadmap.md`.
+
+| Phase | Lab count | Purpose |
+| --- | ---: | --- |
+| Core source-led labs | 16 | Cover the Windows Server 2022 and PowerShell book structure and the wider Windows/Azure admin stack |
+| Drill labs | 8 | Reinforce everything through troubleshooting, automation, timed builds and mixed scenarios |
+| Total | 24 | Complete programme before starting the next specialist series |
+
 ### How to Use This Repository
 
 Each topic folder contains lab outputs for that topic. Each lab should follow the standard template in `docs/lab-output-template.md`.
@@ -64,7 +79,7 @@ Each topic folder contains lab outputs for that topic. Each lab should follow th
 Each lab write-up should include:
 
 * scenario
-* reference material
+* source mapping
 * requirements
 * constraints and assumptions
 * implementation tasks
@@ -80,7 +95,7 @@ Each lab write-up should include:
 * production improvements
 * references used
 * completion checklist
-* reflection questions
+* seven reflection questions
 
 When AI is used in a lab, the lab must also record the tool used, the purpose, what was accepted, what was rejected and how the result was independently verified.
 
@@ -88,13 +103,14 @@ When AI is used in a lab, the lab must also record the tool used, the purpose, w
 
 The core reference stack for this repository is:
 
-* The Practice of Cloud System Administration
 * Windows Server 2022 and PowerShell
-* Active Directory Administration Cookbook
 * Learn PowerShell in a Month of Lunches
-* Microsoft Intune Cookbook
 * Learning Microsoft Azure
-* Operating Systems references for theory and troubleshooting depth
+* Active Directory Administration Cookbook
+* Microsoft Intune Cookbook
+* Modern Operating Systems, 5e
+* The Practice of System and Network Administration
+* The Practice of Cloud System Administration
 * Microsoft Learn and official Microsoft documentation for current implementation guidance
 * Microsoft Learn Azure Copilot, Security Copilot and Azure AI Foundry documentation
 * GitHub Copilot documentation
@@ -127,4 +143,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, PowerShell, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, PowerShell, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, operating systems fundamentals and safe AI-assisted administration.
