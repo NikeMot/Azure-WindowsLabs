@@ -6,7 +6,7 @@ The `Azure-WindowsLabs` repository contains hands-on labs for developing practic
 
 This repository is designed to support my development toward Windows System Administrator, Azure Administrator, Cloud Support Engineer, Infrastructure Operations Engineer and Junior Platform/SRE-style roles.
 
-The labs are not intended to be copy-paste tutorials. Each lab should require research, decision-making, implementation, verification, troubleshooting, documentation and production reflection.
+The labs are not intended to be copy-paste tutorials. Each lab should require research, decision-making, implementation, verification, troubleshooting, documentation, production reflection and deliberate break/fix practice.
 
 ### Target Job Alignment
 
@@ -35,7 +35,13 @@ Every core lab has two parts:
 | Part | Purpose |
 | --- | --- |
 | Part A — New Content | Learn and apply the new topic from the primary source section |
-| Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style scenario |
+| Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style break/fix scenario |
+
+Every lab must include the break/fix chain:
+
+```text
+Known-good state -> deliberate failure -> detection -> diagnosis -> fix -> recovery verification -> prevention note
+```
 
 After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce and pressure-test the full skillset. Drill D08 is the final SRE production incident capstone.
 
@@ -45,6 +51,8 @@ Each lab should develop the ability to:
 * work from one primary book section
 * design a sensible technical approach
 * implement the solution safely
+* deliberately break a controlled lab component
+* detect, diagnose and fix the failure
 * automate where appropriate
 * use AI critically where it improves investigation, scripting or documentation
 * verify the final state with evidence
@@ -69,9 +77,9 @@ The programme must include five hard production anchors:
 
 | Area | Status | Topics |
 | --- | --- | --- |
-| Windows Server foundations | Not started | installation, roles, services, patching, local administration, Event Viewer, Windows Firewall |
-| Active Directory, DNS and Group Policy | Not started | AD DS, domain controllers, OUs, users, groups, DNS, GPOs, Kerberos, domain join |
-| PowerShell administration | Not started | objects, pipeline, scripting, reporting, automation, remoting, error handling |
+| Windows Server foundations | Not started | installation, roles, services, patching, local administration, Event Viewer, Windows Firewall, controlled break/fix |
+| Active Directory, DNS and Group Policy | Not started | AD DS, domain controllers, OUs, users, groups, DNS, GPOs, Kerberos, domain join, identity/access faults |
+| PowerShell administration | Not started | objects, pipeline, scripting, reporting, automation, remoting, error handling, automation failures |
 | File services and permissions | Not started | shares, NTFS, SMB, access control, inheritance, auditability, access troubleshooting |
 | Application services | Not started | IIS, FTP concepts, app pools, bindings, ports, certificates, logs, app support and outage triage |
 | Mail and DNS operations | Not started | DNS records, mail-flow concepts, SMTP relay concepts, service ownership and escalation boundaries |
@@ -114,6 +122,8 @@ The roadmap is tracked in `docs/core-lab-roadmap.md`.
 
 The two-part lab model is tracked in `docs/two-part-lab-model.md`.
 
+The break/fix rule is tracked in `docs/break-fix-standard.md`.
+
 ### How to Use This Repository
 
 Each topic folder contains lab outputs for that topic. Each lab should follow the standard template in `docs/lab-output-template.md`.
@@ -126,6 +136,7 @@ Each lab write-up should include:
 * constraints and assumptions
 * Part A new content tasks
 * Part B cumulative drill tasks
+* break/fix exercise
 * key commands used
 * files, resources or objects created
 * verification evidence
@@ -156,6 +167,7 @@ The core reference stack for this repository is:
 * The Practice of Cloud System Administration
 * Microsoft Learn and official Microsoft documentation for current implementation guidance
 * SRE capstone standard
+* Break/Fix Lab Standard
 * Microsoft Learn Azure Copilot, Security Copilot and Azure AI Foundry documentation
 * GitHub Copilot documentation
 
@@ -187,4 +199,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, SRE-style reliability practices, operating systems fundamentals and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, SRE-style reliability practices, break/fix troubleshooting, operating systems fundamentals and safe AI-assisted administration.
