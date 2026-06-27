@@ -22,6 +22,13 @@ This repository is source-led.
 
 The core lab series is built from **Windows Server 2022 and PowerShell** as the primary source. The book has an eight-book structure, so the programme uses exactly **16 core labs**, with two labs mapped to each book section.
 
+Every core lab has two parts:
+
+| Part | Purpose |
+| --- | --- |
+| Part A — New Content | Learn and apply the new topic from the primary source section |
+| Part B — Cumulative Drill | Drill everything learned so far in a realistic production-style scenario |
+
 After the 16 core labs, the programme adds exactly **8 drill labs** to reinforce and pressure-test the full skillset.
 
 Each lab should develop the ability to:
@@ -37,6 +44,17 @@ Each lab should develop the ability to:
 * document decisions and trade-offs
 * explain the production relevance
 * identify what would need to improve in a real organisation
+
+### Mandatory Production Anchors
+
+The programme must include four hard production anchors:
+
+| Anchor | Purpose |
+| --- | --- |
+| IIS/application outage investigation | Prepare for IIS, FTP, ports, certificates, bindings, logs and application support |
+| 100-server estate simulation with PowerShell reporting | Prepare for 90/100+ Windows Server estate thinking |
+| VMware/SAN/storage incident simulation | Prepare for VMware, datastore, LUN, snapshot, backup and capacity-risk discussions |
+| On-call incident communication pack | Prepare for severity, stakeholder update, escalation, rollback and PIR communication |
 
 ### Skills Covered
 
@@ -81,9 +99,11 @@ The roadmap is tracked in `docs/core-lab-roadmap.md`.
 
 | Phase | Lab count | Purpose |
 | --- | ---: | --- |
-| Core source-led labs | 16 | Cover the Windows Server 2022 and PowerShell book structure and the wider Windows/Azure admin stack |
-| Drill labs | 8 | Reinforce everything through troubleshooting, automation, timed builds and mixed scenarios |
+| Core source-led labs | 16 | Cover the Windows Server 2022 and PowerShell book structure and the wider Windows/Azure production infrastructure stack |
+| Drill labs | 8 | Reinforce everything through troubleshooting, automation, timed builds and mixed production scenarios |
 | Total | 24 | Complete programme before starting the next specialist series |
+
+The two-part lab model is tracked in `docs/two-part-lab-model.md`.
 
 ### How to Use This Repository
 
@@ -95,7 +115,8 @@ Each lab write-up should include:
 * source mapping
 * requirements
 * constraints and assumptions
-* implementation tasks
+* Part A new content tasks
+* Part B cumulative drill tasks
 * key commands used
 * files, resources or objects created
 * verification evidence
