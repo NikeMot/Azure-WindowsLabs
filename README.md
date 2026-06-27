@@ -8,6 +8,14 @@ This repository is designed to support my development toward Windows System Admi
 
 The labs are not intended to be copy-paste tutorials. Each lab should require research, decision-making, implementation, verification, troubleshooting, documentation and production reflection.
 
+### Target Job Alignment
+
+The lab programme is aligned to a Windows-heavy production infrastructure role involving Windows Server administration, Active Directory, DNS, IIS/application support, FTP concepts, mail/DNS operations, VMware, SAN storage, Linux basics, production on-call, stakeholder communication and physical data-centre awareness.
+
+AWS EC2 is intentionally ignored for this programme. Azure VM and hybrid Microsoft infrastructure are used instead.
+
+Detailed job alignment is tracked in `docs/target-job-alignment.md`.
+
 ### Lab Design Philosophy
 
 This repository is source-led.
@@ -38,12 +46,17 @@ Each lab should develop the ability to:
 | Active Directory, DNS and Group Policy | Not started | AD DS, domain controllers, OUs, users, groups, DNS, GPOs, Kerberos, domain join |
 | PowerShell administration | Not started | objects, pipeline, scripting, reporting, automation, remoting, error handling |
 | File services and permissions | Not started | shares, NTFS, SMB, access control, inheritance, auditability, access troubleshooting |
+| Application services | Not started | IIS, FTP concepts, app pools, bindings, ports, certificates, logs, app support and outage triage |
+| Mail and DNS operations | Not started | DNS records, mail-flow concepts, SMTP relay concepts, service ownership and escalation boundaries |
+| Virtualisation and storage | Not started | VMware concepts, Hyper-V comparison, VM lifecycle, snapshots, datastores, SAN concepts and capacity risk |
+| Linux support basics | Not started | SSH, systemd, logs, disk/memory checks, IP/DNS troubleshooting and service comparison with Windows |
 | Entra ID identity administration | Not started | users, groups, roles, MFA, SSPR, sign-in logs, Conditional Access, Entra joined and hybrid joined devices |
 | Intune endpoint management | Not started | Autopilot, device enrolment, Enrollment Status Page, compliance, configuration profiles, app deployment, device sync, troubleshooting |
 | Modern Windows endpoint technologies | Not started | Windows Update for Business, Windows Autopatch, BitLocker, Windows LAPS, Windows Hello for Business, Endpoint Privilege Management, security baselines |
 | Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc and Update Manager basics |
+| Production operations | Not started | on-call, incident triage, severity, escalation, change control, stakeholder updates and post-incident notes |
 | Monitoring, backup and security operations | Not started | Azure Monitor, Log Analytics, alerts, backup, restore, hardening, incident response, operational evidence |
-| Hybrid operations capstone | Not started | end-to-end Windows, identity, endpoint and Azure operations |
+| Hybrid operations capstone | Not started | end-to-end Windows, identity, endpoint, Azure and production operations |
 | AI-assisted administration operations | Not started | Azure Copilot, Security Copilot, GitHub Copilot, KQL assistance, script review, incident summaries, responsible AI use |
 
 ### Repository Structure
@@ -143,4 +156,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, PowerShell, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, operating systems fundamentals and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, operating systems fundamentals and safe AI-assisted administration.
