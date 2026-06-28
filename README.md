@@ -2,7 +2,7 @@
 
 ### Overview
 
-The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security, SRE-style reliability, AI-assisted administration and operational troubleshooting skills.
+The `Azure-WindowsLabs` repository contains hands-on labs for developing practical Windows Server, Azure, identity, endpoint management, automation, monitoring, backup, security, Desired State Configuration, SRE-style reliability, AI-assisted administration and operational troubleshooting skills.
 
 This repository is designed to support my development toward Windows System Administrator, Azure Administrator, Cloud Support Engineer, Infrastructure Operations Engineer and Junior Platform/SRE-style roles.
 
@@ -23,6 +23,14 @@ The capstone is SRE-related.
 The final core lab and final drill should simulate operating a production Windows/IIS service, not merely configuring infrastructure. The capstone should include service ownership, dependency mapping, SLI/SLO thinking, monitoring, alerting, incident triage, stakeholder communication, rollback/recovery, post-incident review, reliability improvements and PowerShell automation.
 
 Detailed SRE capstone rules are tracked in `docs/sre-capstone-standard.md`.
+
+### Desired State Configuration Direction
+
+PowerShell Desired State Configuration (DSC) is included in the programme.
+
+DSC should be used to teach desired state, idempotence, configuration drift, compliance evidence, configuration-as-code and drift remediation. It should connect local PowerShell/DSC practice to Azure Machine Configuration, Azure Policy and Arc-enabled server governance.
+
+Detailed DSC rules are tracked in `docs/dsc-standard.md`.
 
 ### Lab Design Philosophy
 
@@ -54,6 +62,7 @@ Each lab should develop the ability to:
 * deliberately break a controlled lab component
 * detect, diagnose and fix the failure
 * automate where appropriate
+* use DSC or DSC-style thinking where configuration drift/compliance is relevant
 * use AI critically where it improves investigation, scripting or documentation
 * verify the final state with evidence
 * troubleshoot realistic faults
@@ -63,7 +72,7 @@ Each lab should develop the ability to:
 
 ### Mandatory Production Anchors
 
-The programme must include five hard production anchors:
+The programme must include six hard production anchors:
 
 | Anchor | Purpose |
 | --- | --- |
@@ -71,6 +80,7 @@ The programme must include five hard production anchors:
 | 100-server estate simulation with PowerShell reporting | Prepare for 90/100+ Windows Server estate thinking |
 | VMware/SAN/storage incident simulation | Prepare for VMware, datastore, LUN, snapshot, backup and capacity-risk discussions |
 | On-call incident communication pack | Prepare for severity, stakeholder update, escalation, rollback and PIR communication |
+| DSC drift detection and remediation | Prepare for desired state, configuration-as-code, compliance and reliability work |
 | SRE-style reliability capstone | Prepare for service ownership, SLI/SLO thinking, reliability improvement and toil reduction |
 
 ### Skills Covered
@@ -80,6 +90,7 @@ The programme must include five hard production anchors:
 | Windows Server foundations | Not started | installation, roles, services, patching, local administration, Event Viewer, Windows Firewall, controlled break/fix |
 | Active Directory, DNS and Group Policy | Not started | AD DS, domain controllers, OUs, users, groups, DNS, GPOs, Kerberos, domain join, identity/access faults |
 | PowerShell administration | Not started | objects, pipeline, scripting, reporting, automation, remoting, error handling, automation failures |
+| Desired State Configuration | Not started | desired state, idempotence, DSC resources, configuration drift, compliance evidence, Azure Machine Configuration comparison |
 | File services and permissions | Not started | shares, NTFS, SMB, access control, inheritance, auditability, access troubleshooting |
 | Application services | Not started | IIS, FTP concepts, app pools, bindings, ports, certificates, logs, app support and outage triage |
 | Mail and DNS operations | Not started | DNS records, mail-flow concepts, SMTP relay concepts, service ownership and escalation boundaries |
@@ -88,7 +99,7 @@ The programme must include five hard production anchors:
 | Entra ID identity administration | Not started | users, groups, roles, MFA, SSPR, sign-in logs, Conditional Access, Entra joined and hybrid joined devices |
 | Intune endpoint management | Not started | Autopilot, device enrolment, Enrollment Status Page, compliance, configuration profiles, app deployment, device sync, troubleshooting |
 | Modern Windows endpoint technologies | Not started | Windows Update for Business, Windows Autopatch, BitLocker, Windows LAPS, Windows Hello for Business, Endpoint Privilege Management, security baselines |
-| Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc and Update Manager basics |
+| Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc, Machine Configuration and Update Manager basics |
 | Production operations | Not started | on-call, incident triage, severity, escalation, change control, stakeholder updates and post-incident notes |
 | Monitoring, backup and security operations | Not started | Azure Monitor, Log Analytics, alerts, backup, restore, hardening, incident response, operational evidence |
 | SRE-style capstone | Not started | service ownership, dependency mapping, SLIs/SLOs, alerting, incident response, PIR, toil reduction and reliability backlog |
@@ -101,11 +112,11 @@ The programme must include five hard production anchors:
 | `docs/` | General documentation, standards, lab template, repository decisions and operating rules |
 | `01-windows-server-foundations/` | Windows Server installation, configuration, roles, services and base administration |
 | `02-active-directory-dns-gpo/` | Active Directory Domain Services, DNS, OUs, users, groups and Group Policy |
-| `03-powershell-administration/` | PowerShell fundamentals, automation, reporting, remoting and safe admin scripting |
+| `03-powershell-administration/` | PowerShell fundamentals, automation, reporting, remoting, DSC and safe admin scripting |
 | `04-file-services-permissions/` | File shares, NTFS permissions, inheritance, access troubleshooting and audit evidence |
 | `05-entra-id-identity/` | Cloud identity administration with Entra ID, MFA, SSPR, roles and sign-in investigation |
 | `06-intune-endpoint-management/` | Intune, Autopilot, compliance, configuration, application deployment, Windows update management and endpoint support |
-| `07-azure-core-administration/` | Azure compute, storage, networking, RBAC, governance and cost-aware administration |
+| `07-azure-core-administration/` | Azure compute, storage, networking, RBAC, governance, Machine Configuration and cost-aware administration |
 | `08-monitoring-backup-security/` | Monitoring, logging, backup, restore, alerting, security hardening and incident response |
 | `09-hybrid-operations-capstone/` | SRE-style Windows/Azure service reliability capstone and final assessment labs |
 | `10-ai-assisted-admin-operations/` | Safe and practical use of AI for scripting, troubleshooting, KQL, documentation and operational analysis |
@@ -124,6 +135,8 @@ The two-part lab model is tracked in `docs/two-part-lab-model.md`.
 
 The break/fix rule is tracked in `docs/break-fix-standard.md`.
 
+The DSC rule is tracked in `docs/dsc-standard.md`.
+
 ### How to Use This Repository
 
 Each topic folder contains lab outputs for that topic. Each lab should follow the standard template in `docs/lab-output-template.md`.
@@ -137,6 +150,7 @@ Each lab write-up should include:
 * Part A new content tasks
 * Part B cumulative drill tasks
 * break/fix exercise
+* DSC/compliance evidence where relevant
 * key commands used
 * files, resources or objects created
 * verification evidence
@@ -159,6 +173,8 @@ The core reference stack for this repository is:
 
 * Windows Server 2022 and PowerShell
 * Learn PowerShell in a Month of Lunches
+* PowerShell Desired State Configuration / Microsoft DSC documentation
+* Azure Machine Configuration and Azure Policy documentation
 * Learning Microsoft Azure
 * Active Directory Administration Cookbook
 * Microsoft Intune Cookbook
@@ -199,4 +215,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, monitoring, backup, production operations, SRE-style reliability practices, break/fix troubleshooting, operating systems fundamentals and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, Desired State Configuration, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, Azure Machine Configuration, monitoring, backup, production operations, SRE-style reliability practices, break/fix troubleshooting, operating systems fundamentals and safe AI-assisted administration.
