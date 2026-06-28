@@ -6,7 +6,7 @@ The `Azure-WindowsLabs` repository contains hands-on labs for developing practic
 
 This repository is designed to support my development toward Windows System Administrator, Azure Administrator, Cloud Support Engineer, Infrastructure Operations Engineer and Junior Platform/SRE-style roles.
 
-The labs are not intended to be copy-paste tutorials. Each lab should require research, decision-making, implementation, verification, troubleshooting, documentation, production reflection and deliberate break/fix practice.
+The labs are not intended to be copy-paste tutorials. Each lab should require research, decision-making, implementation, verification, troubleshooting, documentation, production reflection, current online documentation and deliberate break/fix practice.
 
 ### Target Job Alignment
 
@@ -31,6 +31,14 @@ PowerShell Desired State Configuration (DSC) is included in the programme.
 DSC should be used to teach desired state, idempotence, configuration drift, compliance evidence, configuration-as-code and drift remediation. It should connect local PowerShell/DSC practice to Azure Machine Configuration, Azure Policy and Arc-enabled server governance.
 
 Detailed DSC rules are tracked in `docs/dsc-standard.md`.
+
+### Current Online Documentation Direction
+
+Current online documentation is required for technologies that change over time.
+
+Books provide structure and depth. Microsoft Learn and other official vendor documentation provide current terminology, supported behaviour, service limitations, command syntax and implementation guidance.
+
+Detailed online documentation rules are tracked in `docs/online-documentation-standard.md`.
 
 ### Lab Design Philosophy
 
@@ -57,6 +65,7 @@ Each lab should develop the ability to:
 
 * understand the business or operational scenario
 * work from one primary book section
+* verify current guidance from official online documentation
 * design a sensible technical approach
 * implement the solution safely
 * deliberately break a controlled lab component
@@ -100,6 +109,7 @@ The programme must include six hard production anchors:
 | Intune endpoint management | Not started | Autopilot, device enrolment, Enrollment Status Page, compliance, configuration profiles, app deployment, device sync, troubleshooting |
 | Modern Windows endpoint technologies | Not started | Windows Update for Business, Windows Autopatch, BitLocker, Windows LAPS, Windows Hello for Business, Endpoint Privilege Management, security baselines |
 | Azure core administration | Not started | resource groups, RBAC, VNets, VMs, storage, NSGs, cost controls, Azure Arc, Machine Configuration and Update Manager basics |
+| Current online documentation | Not started | Microsoft Learn, official vendor docs, accessed date, last-updated date and lab relevance |
 | Production operations | Not started | on-call, incident triage, severity, escalation, change control, stakeholder updates and post-incident notes |
 | Monitoring, backup and security operations | Not started | Azure Monitor, Log Analytics, alerts, backup, restore, hardening, incident response, operational evidence |
 | SRE-style capstone | Not started | service ownership, dependency mapping, SLIs/SLOs, alerting, incident response, PIR, toil reduction and reliability backlog |
@@ -137,6 +147,8 @@ The break/fix rule is tracked in `docs/break-fix-standard.md`.
 
 The DSC rule is tracked in `docs/dsc-standard.md`.
 
+The online documentation rule is tracked in `docs/online-documentation-standard.md`.
+
 ### How to Use This Repository
 
 Each topic folder contains lab outputs for that topic. Each lab should follow the standard template in `docs/lab-output-template.md`.
@@ -145,6 +157,7 @@ Each lab write-up should include:
 
 * scenario
 * source mapping
+* current online documentation table
 * requirements
 * constraints and assumptions
 * Part A new content tasks
@@ -182,6 +195,7 @@ The core reference stack for this repository is:
 * The Practice of System and Network Administration
 * The Practice of Cloud System Administration
 * Microsoft Learn and official Microsoft documentation for current implementation guidance
+* Online Documentation Standard
 * SRE capstone standard
 * Break/Fix Lab Standard
 * Microsoft Learn Azure Copilot, Security Copilot and Azure AI Foundry documentation
@@ -215,4 +229,4 @@ This repository must not contain:
 
 ### Portfolio Goal
 
-The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, Desired State Configuration, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, Azure Machine Configuration, monitoring, backup, production operations, SRE-style reliability practices, break/fix troubleshooting, operating systems fundamentals and safe AI-assisted administration.
+The final portfolio should show that I can build, support, troubleshoot, automate and document a realistic Microsoft infrastructure environment across Windows Server, Active Directory, DNS, IIS/application services, file services, PowerShell, Desired State Configuration, VMware/SAN concepts, Linux basics, Entra ID, Intune, Autopilot, modern Windows endpoint management, Azure, Azure Machine Configuration, monitoring, backup, production operations, SRE-style reliability practices, break/fix troubleshooting, current online documentation usage, operating systems fundamentals and safe AI-assisted administration.
