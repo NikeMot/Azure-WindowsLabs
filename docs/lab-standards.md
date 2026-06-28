@@ -4,7 +4,7 @@
 
 This document defines the standard expected for every lab in this repository.
 
-The labs should develop real Windows and Azure administration competence, not just familiarity with menus or commands.
+The labs should develop real Windows, Azure, PowerShell and Desired State Configuration competence, not just familiarity with menus or commands.
 
 ### Core Rule
 
@@ -16,9 +16,10 @@ Every lab must require the learner to:
 * complete Part A for new content
 * complete Part B for cumulative drilling of everything learned so far
 * perform a controlled break/fix exercise unless unsafe, destructive or irrelevant
+* use DSC or DSC-style desired-state thinking where configuration drift or compliance is relevant
 * research supporting reference material only where relevant
 * connect Windows behaviour to Modern Operating Systems theory where useful
-* map local Windows administration to Azure, Intune, Entra, Autopilot or hybrid cloud equivalents where relevant
+* map local Windows administration to Azure, Intune, Entra, Autopilot, Azure Machine Configuration or hybrid cloud equivalents where relevant
 * make technical decisions
 * implement the solution
 * use PowerShell as a serious administration and automation tool
@@ -57,7 +58,7 @@ Part B must become progressively harder as the series advances.
 | Labs 01-04 | Server inspection, evidence capture, services, updates, storage, networking basics and simple controlled faults |
 | Labs 05-08 | AD, DNS, GPO, users/groups, file services, IIS/FTP and access troubleshooting faults |
 | Labs 09-12 | Networking, firewall, VMware/SAN concepts, security, backup, recovery and incident faults |
-| Labs 13-16 | Estate-scale PowerShell, automation, Azure/hybrid operations, monitoring, runbooks, stakeholder communications and SRE-style break/fix incidents |
+| Labs 13-16 | Estate-scale PowerShell, DSC, automation, Azure/hybrid operations, monitoring, runbooks, stakeholder communications and SRE-style break/fix incidents |
 
 The seven reflection questions remain fixed. Do not add more reflection questions because a lab has two parts.
 
@@ -81,6 +82,27 @@ Every break/fix exercise should include:
 8. prevention or monitoring improvement
 9. production risk note
 
+### DSC Standard
+
+Desired State Configuration must be included in the programme.
+
+Use `docs/dsc-standard.md` as the detailed rule.
+
+DSC should be used to teach:
+
+* desired state versus imperative scripting
+* idempotence
+* configuration drift
+* resources and configuration documents
+* local configuration validation
+* drift detection and remediation
+* configuration-as-code in source control
+* compliance evidence
+* Azure Machine Configuration and Azure Policy comparison
+* SRE relevance through drift prevention and toil reduction
+
+DSC depth should be strongest in Labs 14-16 and the final drill labs. Labs 11-13 should introduce baseline, reporting and compliance thinking before deeper DSC work.
+
 ### Source-Led Rule
 
 Each lab should be anchored to one primary book section.
@@ -96,6 +118,8 @@ The lab should cover one meaningful unit from that book, such as one chapter, mo
 Supporting references may be used to deepen the lab:
 
 * Learn PowerShell in a Month of Lunches for PowerShell technique
+* PowerShell DSC / Microsoft DSC documentation for desired-state configuration
+* Azure Machine Configuration / Azure Policy documentation for Azure and hybrid compliance
 * Learning Microsoft Azure for Azure or hybrid relevance
 * Azure Cookbook for practical Azure implementation patterns
 * Microsoft Intune Cookbook for endpoint-management relevance
@@ -117,7 +141,7 @@ The learner has already passed AZ-104, so labs should not waste time on basic Az
 For each relevant local Windows task, the lab should ask:
 
 ```text
-What is the Azure, Intune, Entra, Autopilot, Arc, Monitor, Backup, Update Manager, PowerShell or CLI equivalent?
+What is the Azure, Intune, Entra, Autopilot, Arc, Monitor, Backup, Update Manager, Machine Configuration, PowerShell, DSC or CLI equivalent?
 ```
 
 Use `docs/azure-cloud-parity-standard.md` as the detailed mapping.
@@ -132,6 +156,8 @@ Every local Windows capability should be connected where relevant to:
 * Azure Update Manager
 * Azure Backup and Recovery Services vaults
 * Azure Arc-enabled servers
+* Azure Machine Configuration and guest assignments
+* Azure Policy compliance/remediation
 * Intune configuration profiles, compliance policies and security baselines
 * Windows Autopilot and Autopilot device preparation
 * Windows Update for Business and Windows Autopatch
@@ -147,6 +173,7 @@ The following anchors are mandatory because they directly map to the target prod
 | 100-server estate simulation with PowerShell reporting | Inventory CSV, server-role mapping, criticality, patch/backup/monitoring status and generated reports |
 | VMware/SAN/storage incident simulation | VM lifecycle notes, snapshot versus backup distinction, datastore/LUN/capacity issue and recovery/escalation notes |
 | On-call incident communication pack | Severity, timeline, impact, stakeholder update, escalation, resolution, rollback and PIR notes |
+| DSC drift detection and remediation | Desired-state definition, drift evidence, remediation action, compliance verification and Azure Machine Configuration comparison |
 
 These anchors should appear in both the core labs and the 8 drill labs.
 
@@ -165,9 +192,10 @@ Every core lab should include at least one meaningful PowerShell element:
 * automation task
 * error handling pattern
 * transcript or logging practice
+* DSC or DSC-style compliance validation where relevant
 * Azure CLI or Az PowerShell comparison where cloud parity applies
 
-Labs 13 to 16 should be heavily PowerShell-focused and should include scripting, automation, remoting, functions, parameters, logging, errors, idempotence and operational safety.
+Labs 13 to 16 should be heavily PowerShell-focused and should include scripting, automation, remoting, DSC, functions, parameters, logging, errors, idempotence and operational safety.
 
 ### Modern Operating Systems Standard
 
@@ -181,7 +209,7 @@ Use it where relevant for:
 * virtualisation
 * networking
 * security and access control
-* reliability and failure modes
+* reliability, configuration drift and failure modes
 
 The OS theory must support the lab. It should not become passive reading detached from the practical task.
 
@@ -196,6 +224,10 @@ A weak lab says:
 A strong source-led lab says:
 
 > Using the Windows Server 2022 and PowerShell server administration material as the primary guide, inspect the server with PowerShell, identify roles/features, network state, service state and operational risks, connect at least one finding to Modern Operating Systems theory, map the local task to Azure or hybrid cloud equivalents, then deliberately break one controlled element and recover it using evidence.
+
+A strong DSC-style lab says:
+
+> Define the intended state of a small server component, prove the current state, introduce controlled drift, detect the drift, restore the desired state, and compare how Azure Machine Configuration would audit or remediate the same condition at scale.
 
 A weak AI-assisted lab says:
 
@@ -246,11 +278,13 @@ Each completed lab document should follow `docs/lab-output-template.md` and incl
 Each completed lab should include safe evidence such as:
 
 * PowerShell command output
+* DSC or DSC-style desired-state/compliance evidence where relevant
 * Azure CLI command output
 * Azure Portal setting descriptions
 * Event Viewer findings
 * Entra sign-in log findings
 * Intune device compliance observations
+* Azure Machine Configuration or Azure Policy compliance observations where relevant
 * Azure Monitor or Log Analytics query results
 * IIS logs where relevant
 * DNS or network test output where relevant
@@ -295,6 +329,8 @@ Each lab should identify:
 * the primary book section used
 * supporting book sections, if used
 * relevant Microsoft Learn documentation, if used
+* DSC / Microsoft DSC documentation used, if relevant
+* Azure Machine Configuration or Azure Policy documentation used, if relevant
 * Azure, Intune, Autopilot or Entra documentation used, if relevant
 * Modern Operating Systems theory used, if relevant
 * any AI documentation or AI tool guidance used
@@ -311,7 +347,8 @@ Every final lab document should answer:
 * What evidence would be needed for audit or incident review?
 * What could fail and how would it be detected?
 * What OS concept explains the behaviour or failure mode?
-* What is the Azure, Intune, Entra or hybrid equivalent of this local capability?
+* What is the Azure, Intune, Entra, Machine Configuration or hybrid equivalent of this local capability?
+* Could DSC, Azure Machine Configuration or policy prevent or detect drift here?
 * What earlier skills were drilled again in Part B?
 * What broke, how was it diagnosed, how was it fixed, and how would recurrence be prevented?
 * If AI was used, what data would be unsafe to expose and how would AI use be governed?
