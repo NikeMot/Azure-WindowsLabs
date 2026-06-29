@@ -13,6 +13,25 @@ The learner should focus on solving the lab. Documentation should be handled aft
 | Learner | Solve the lab, perform the technical work, troubleshoot issues, collect safe evidence and answer seven reflection questions |
 | Assistant | Create the lab brief, interpret the evidence, write the final documentation, format the lab output, apply the repo template and upload the completed lab to the correct folder |
 
+### Lab Timebox
+
+Every required lab must be designed to take 60 to 90 minutes maximum.
+
+This timebox includes:
+
+* reading the lab brief
+* completing the technical tasks
+* performing verification
+* completing one controlled break/fix exercise, where relevant
+* collecting safe evidence
+* answering the seven reflection questions
+
+The learner should not be expected to write the final report inside this timebox. Final documentation is handled by the assistant after the learner provides evidence and answers.
+
+Use `docs/lab-timebox-standard.md` as the detailed rule.
+
+If a lab cannot realistically fit inside 90 minutes, split it into smaller labs. Work that is useful but not required should be marked as optional stretch work.
+
 ### Learner Workflow
 
 For each lab, the learner should:
@@ -102,3 +121,4 @@ A lab is complete when:
 * seven reflection questions are answered
 * the final lab document is uploaded to the correct repository folder
 * no secrets or private data are included
+* the required work was scoped to fit within the 60 to 90 minute timebox
